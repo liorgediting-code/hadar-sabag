@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצעד הבא שלך | הדר סבג | ליווי תוכן</title>
+  <meta name="description" content="קיבלנו את הפרטים שלך. צפי בסרטון על תהליך הליווי, ומלאי את פרטי השיחה כדי שנחזור אלייך תוך 24 שעות." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .tutorial-header {
+      background: linear-gradient(135deg, var(--pink-light) 0%, #fff 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .tutorial-header h1 { margin-bottom: 12px; }
+    .tutorial-header p  { font-size: 1.1rem; }
+    @media (max-width: 600px) {
+      .tutorial-header { padding: 36px 20px 28px; }
+      .tutorial-header p { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navbar ─── -->
+  <nav class="navbar" aria-label="ניווט ראשי">
+    <div class="navbar__inner">
+      <div class="navbar__logo">הדר <span>כהן</span></div>
+      <a href="#discovery-form-section" class="btn navbar__cta">להשלמת פרטים ←</a>
+    </div>
+  </nav>
+
+  <!-- ─── Tutorial Header ─── -->
+  <section class="tutorial-header">
+    <div class="container">
+      <span class="tag">קיבלתי את הפרטים שלך 🎬</span>
+      <h1>הי<span id="greeting-name"></span>, עוד צעד קטן ואנחנו בקשר</h1>
+      <p class="section-sub" style="margin: 12px auto 0;">
+        צפי בסרטון הקצר על הליווי, ואז השלימי כמה פרטים. נחזור אלייך תוך 24 שעות לתיאום שיחת האסטרטגיה.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Video ─── -->
+  <section class="section section--white" style="padding-top: 40px;">
+    <div class="container">
+
+      <!-- ════ INSERT YOUTUBE LINK BELOW ════
+           Replace the src with your YouTube embed URL:
+           https://www.youtube.com/embed/YOUR_VIDEO_ID
+           ════════════════════════════════════ -->
+      <div class="video-wrapper">
+        <!-- YOUTUBE IFRAME PLACEHOLDER. Replace src when ready. -->
+        <!-- <iframe
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          title="ליווי תוכן הדר סבג"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe> -->
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>סרטון YouTube יוצג כאן</p>
+          <p style="font-size:0.8rem;">הוסיפי את הקישור בקוד (שורה 51)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Key Takeaways ─── -->
+  <section class="section section--pink">
+    <div class="container text-center">
+      <span class="tag">איך נראה התהליך</span>
+      <h2>שלושה שלבים. 3 חודשים. אפס ניחושים.</h2>
+
+      <div class="takeaways__list">
+        <div class="takeaway">
+          <div class="takeaway__num">1</div>
+          <div class="takeaway__text">
+            <h3>פגישות אסטרטגיה ובניית מסרים</h3>
+            <p>נשב באישית בזום. ממפות את הלקוחות שלך, את ההתנגדויות שלהם, ואת המסרים שיגרמו להם לפנות. יוצאת עם 15 עד 20 קונספטים לרילסים וסקריפטים מוכנים.</p>
+          </div>
+        </div>
+        <div class="takeaway">
+          <div class="takeaway__num">2</div>
+          <div class="takeaway__text">
+            <h3>יום צילום מקצועי אצלך</h3>
+            <p>מגיעות עם ציוד, סטיילינג ומאפרת. את לא צריכה לדעת לעמוד מול מצלמה. אנחנו מובילות. ביום אחד מצלמות חודש שלם של תוכן.</p>
+          </div>
+        </div>
+        <div class="takeaway">
+          <div class="takeaway__num">3</div>
+          <div class="takeaway__text">
+            <h3>ליווי שוטף עד שזה ממיר</h3>
+            <p>פגישות זום חודשיות איתי לאורך כל הדרך. ניתוח של מה שעובד, חידוד מסרים, ובנייה של מסע תוכן שמחמם לידים עד שהם פונים אלייך מוכנים.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Offer CTA ─── -->
+  <section class="section section--white" id="offer">
+    <div class="container">
+      <div class="offer-cta">
+        <span class="tag tag--on-pink">הצעד הבא שלך</span>
+        <h2>בואי נראה אם זה מתאים לך</h2>
+        <p>
+          לפני שמתחילות ליווי, אני תמיד מקיימת שיחת אסטרטגיה של 30 דקות. בלי עלות. בלי שפיץ מכירה.<br /><br />
+          השיחה היא הדרך שלי להבין אם יש התאמה אמיתית, ושלך לראות בדיוק מה את מקבלת. גם אם לא נעבוד יחד, את יוצאת עם צעד מעשי.
+        </p>
+        <ul class="offer-points">
+          <li>אבחון של ההתנגדות המרכזית שעוצרת את הלקוחות שלך.</li>
+          <li>הצגת תהליך הליווי וההשקעה.</li>
+          <li>צעד מעשי אחד שאת יכולה ליישם כבר השבוע.</li>
+          <li>שיחה חינמית. ללא התחייבות.</li>
+        </ul>
+        <a href="#discovery-form-section" class="btn btn--white btn--lg">להשלמת פרטים לשיחה</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ─── -->
+  <section class="section section--pink">
+    <div class="container text-center">
+      <span class="tag">הן כבר עשו את הצעד</span>
+      <h2>בעלות עסק שהפסיקו לצלם לבד</h2>
+
+      <div class="testimonials__grid">
+        <div class="testimonial__card">
+          <p class="testimonial__quote">המקום הזה שמור לחוות דעת אמיתית מאחת הלקוחות שלי.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">?</div>
+            <div>
+              <div class="testimonial__name">שם הלקוחה</div>
+              <div class="testimonial__role">תחום העסק</div>
+            </div>
+          </div>
+          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+        </div>
+
+        <div class="testimonial__card">
+          <p class="testimonial__quote">חוות דעת שנייה עם תוצאה ספציפית ומדידה.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">?</div>
+            <div>
+              <div class="testimonial__name">שם הלקוחה</div>
+              <div class="testimonial__role">תחום העסק</div>
+            </div>
+          </div>
+          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+        </div>
+
+        <div class="testimonial__card">
+          <p class="testimonial__quote">חוות דעת שלישית, אם יש.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">?</div>
+            <div>
+              <div class="testimonial__name">שם הלקוחה</div>
+              <div class="testimonial__role">תחום העסק</div>
+            </div>
+          </div>
+          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Discovery Form ─── -->
+  <section class="form-section" id="discovery-form-section">
+    <div class="container text-center">
+      <span class="tag tag--on-pink">שיחת אסטרטגיה 1:1 | 30 דקות</span>
+      <h2>השלימי פרטים. נחזור אלייך.</h2>
+      <p class="section-sub">כדי שהשיחה תהיה ממוקדת ושווה את הזמן שלך, ספרי לי קצת על העסק ועל מה שהכי מטריד אותך בתוכן עכשיו.</p>
+
+      <div class="form-box">
+        <form id="discovery-form" novalidate>
+          <div class="form-group">
+            <label for="d-name">שם מלא</label>
+            <input type="text" id="d-name" name="name" placeholder="השם שלך" autocomplete="name" required />
+            <p class="form-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="d-email">אימייל</label>
+            <input type="email" id="d-email" name="email" placeholder="your@email.com" autocomplete="email" required />
+            <p class="form-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="d-phone">טלפון</label>
+            <input type="tel" id="d-phone" name="phone" placeholder="050-0000000" autocomplete="tel" required />
+            <p class="form-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="d-message">ספרי קצת על העסק והאתגר שלך</label>
+            <textarea id="d-message" name="message" placeholder="מה את עושה, מי הלקוחות שלך, ומה מעכב אותך בתוכן..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--full" style="margin-top: 8px;">
+            לקבוע את שיחת האסטרטגיה
+          </button>
+
+          <p class="form-fine-print">הפרטים שמורים אצלי בלבד. אחזור אלייך תוך 24 שעות.</p>
+        </form>
+
+        <div class="form-success" id="discovery-success">
+          <div class="form-success__icon">💌</div>
+          <h3>!קיבלתי. נחזור אלייך תוך 24 שעות</h3>
+          <p>תודה ששיתפת. נחזור אלייך לתיאום במייל או בוואטסאפ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 40px;">
+        <span class="tag">שאלות נפוצות</span>
+        <h2>מה קורה בשיחה החינמית?</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>מה קורה בשיחה? יש כאן מכירה?</summary>
+          <p>אין שפיץ מכירה. השיחה ממוקדת בעסק שלך. שואלת, מקשיבה, מזהה את ההתנגדות שעוצרת את הלקוחות שלך. את יוצאת עם צעד מעשי. ועם פירוט מלא על הליווי במידה ויש התאמה. אין התאמה? אגיד גם את זה בפשטות.</p>
+        </details>
+        <details>
+          <summary>כמה זמן השיחה?</summary>
+          <p>30 דקות. מספיק כדי להבין את המצב, להציג את התהליך, ולתת לך תשובה אמיתית.</p>
+        </details>
+        <details>
+          <summary>מה להכין לפני השיחה?</summary>
+          <p>כלום מיוחד. תפתחי את האינסטגרם והאתר שלך כדי שנוכל להסתכל יחד. תחשבי על שאלה אחת שמטרידה אותך הכי הרבה בתוכן עכשיו.</p>
+        </details>
+        <details>
+          <summary>מתי תחזרו אליי?</summary>
+          <p>תוך 24 שעות. נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים לשיחה.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer">
+    <p>© 2025 הדר סבג · ליווי תוכן לבעלות עסקי שירות</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
