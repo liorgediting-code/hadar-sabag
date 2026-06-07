@@ -1,319 +1,506 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html class="dark" dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ליווי תוכן לבעלות עסק | הדר סבג | תוכן שממיר, לא רק צופים</title>
-  <meta name="description" content="ליווי 1:1 של 3 חודשים לבעלות עסקי שירות בתחילת הדרך הדיגיטלית. תוכן ששובר התנגדויות ומחמם לידים." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>הדר סבג | שיטת התוכן להמרת לקוחות</title>
+  <meta name="description" content="שיטת תוכן שפותרת ללקוח את כל ההתנגדויות וגורמת לו לפנות מעצמו. ליווי 1:1 לבעלות עסקי שירות." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab",
+            "paper-cream": "#F5F1EA",
+            "surface-container-high": "#2a2a2c",
+            "on-tertiary-container": "#e91e63",
+            "metallic-gold": "#D4B090",
+            "surface-container-low": "#1b1b1d",
+            "on-tertiary": "#660025",
+            "ink-black": "#0A0A0A",
+            "primary": "#c9c6c5",
+            "secondary": "#c9c6c0",
+            "on-tertiary-fixed-variant": "#900038",
+            "on-secondary-fixed-variant": "#484742",
+            "surface-variant": "#353437",
+            "on-tertiary-fixed": "#400014",
+            "on-secondary-container": "#b8b5ae",
+            "surface-container-highest": "#353437",
+            "secondary-container": "#484742",
+            "inverse-on-surface": "#303032",
+            "secondary-fixed-dim": "#c9c6c0",
+            "on-surface": "#e5e1e4",
+            "on-primary-fixed-variant": "#474646",
+            "tertiary-fixed": "#ffd9de",
+            "on-primary": "#313030",
+            "on-secondary": "#31302c",
+            "on-error-container": "#ffdad6",
+            "surface-container": "#1f1f21",
+            "outline": "#8e9192",
+            "outline-variant": "#444748",
+            "surface-container-lowest": "#0e0e10",
+            "primary-fixed-dim": "#c9c6c5",
+            "vibrant-accent": "#E91E63",
+            "on-surface-variant": "#c4c7c7",
+            "primary-fixed": "#e5e2e1",
+            "error-container": "#93000a",
+            "inverse-surface": "#e5e1e4",
+            "on-primary-container": "#7b7979",
+            "on-error": "#690005",
+            "inverse-primary": "#5f5e5e",
+            "surface": "#131315",
+            "tertiary-fixed-dim": "#ffb2be",
+            "background": "#131315",
+            "on-primary-fixed": "#1c1b1b",
+            "surface-tint": "#c9c6c5",
+            "tertiary": "#ffb2be",
+            "tertiary-container": "#1f0006",
+            "on-background": "#e5e1e4",
+            "surface-bright": "#39393b",
+            "surface-dim": "#131315",
+            "on-secondary-fixed": "#1c1c18",
+            "primary-container": "#0a0a0a",
+            "secondary-fixed": "#e6e2db"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "section-padding-sm": "64px",
+            "gutter": "24px",
+            "unit": "8px",
+            "margin-mobile": "20px",
+            "container-max": "1200px",
+            "section-padding-lg": "120px"
+          },
+          fontFamily: {
+            "display-lg": ["Heebo"],
+            "label-caps": ["Heebo"],
+            "body-md": ["Assistant"],
+            "body-lg": ["Assistant"],
+            "quote-text": ["Assistant"],
+            "headline-lg": ["Heebo"],
+            "headline-xl": ["Heebo"]
+          },
+          fontSize: {
+            "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+            "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "quote-text": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+            "headline-xl": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}]
+          }
+        },
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #131315; color: #e5e1e4; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .hero-gradient { background: radial-gradient(circle at 50% 50%, #1a1a1c 0%, #0a0a0a 100%); }
+    .gold-border-top { border-top: 2px solid #D4B090; }
+    .form-error { color: #E91E63; font-size: 13px; margin-top: 4px; min-height: 18px; display: none; }
+    .form-error.visible { display: block; }
+  </style>
 </head>
-<body>
+<body class="font-body-md">
 
-  <!-- ─── Navbar ─── -->
-  <nav class="navbar" aria-label="ניווט ראשי">
-    <div class="navbar__inner">
-      <div class="navbar__logo">הדר <span>כהן</span></div>
-      <a href="#lead-form-section" class="btn navbar__cta">לשיחת אסטרטגיה ←</a>
+<!-- Header / Navbar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-20">
+  <nav class="flex flex-row justify-between items-center px-margin-mobile md:px-section-padding-sm max-w-container-max mx-auto h-full">
+    <div class="font-display-lg text-headline-xl text-on-surface tracking-tighter">הדר סבג</div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-vibrant-accent font-bold hover:text-metallic-gold transition-colors" href="#">בית</a>
+      <a class="text-on-surface-variant font-medium hover:text-metallic-gold transition-colors" href="#method">השיטה</a>
+      <a class="text-on-surface-variant font-medium hover:text-metallic-gold transition-colors" href="#results">תוצאות</a>
     </div>
+    <a class="bg-vibrant-accent text-ink-black px-6 py-2 font-bold hover:bg-metallic-gold transition-all flex items-center gap-2" href="#lead-form-section">
+      אני רוצה שיטה כזו ←
+    </a>
   </nav>
+</header>
 
-  <!-- ─── Hero ─── -->
-  <section class="hero">
-    <div class="hero__inner">
-      <div class="hero__content">
-        <span class="tag">ליווי 1:1 | 3 חודשים</span>
-        <h1 class="hero__title">
-          את מעלה תוכן.<br />
-          <span class="highlight">למה הלקוחות עדיין לא מגיעים?</span>
-        </h1>
-        <p class="hero__subtitle">
-          זה לא כי התוכן שלך לא יפה. וזה לא כי את לא טובה במה שאת עושה.<br /><br />
-          הלקוחות לא מגיעים כי התוכן לא נוגע במה שעוצר אותם מלקנות. בליווי של 3 חודשים נבנה יחד תוכן ששובר התנגדויות, מחמם לידים, וגורם להם לפנות אלייך כשהם מוכנים.
-        </p>
-        <div class="hero__cta-group">
-          <a href="#lead-form-section" class="btn btn--lg">לשיחת אסטרטגיה חינמית</a>
-          <p class="hero__fine-print">✓ ללא עלות &nbsp;·&nbsp; ✓ ללא התחייבות &nbsp;·&nbsp; ✓ תשובה תוך 24 שעות</p>
-        </div>
-      </div>
-      <div class="hero__image">
-        <img src="hadar-photo.jpg" alt="הדר סבג" style="width:100%;max-height:520px;object-fit:contain;object-position:bottom center;border-radius:var(--radius);display:block;">
-      </div>
+<!-- Hero Section -->
+<section class="hero-gradient pt-40 pb-24 md:py-section-padding-lg text-center px-margin-mobile">
+  <div class="max-w-4xl mx-auto">
+    <span class="text-vibrant-accent font-bold font-label-caps uppercase tracking-widest block mb-6">הדר סבג חושפת את שיטת התוכן שגורמת ללקוחות לפנות מעצמם</span>
+    <h1 class="font-display-lg text-display-lg mb-8 text-on-surface">להפסיק להשתעבד<br/>לאינסטגרם</h1>
+    <p class="font-headline-lg text-headline-lg text-on-surface-variant mb-6 max-w-2xl mx-auto">תוכן מקצועי שפותר ללקוח את כל ההתנגדויות, וגורם לו לפנות מעצמו.</p>
+    <p class="font-body-lg text-body-lg text-outline mb-12 max-w-xl mx-auto">תפסיקי לרדוף אחרי טרנדים וצפיות ריקות. הגיע הזמן להכפיל את כמות הלקוחות שלך בעזרת אסטרטגיה מדויקת שהופכת את הפיד למכונת מכירות.</p>
+    <div class="flex flex-col md:flex-row justify-center gap-4">
+      <a href="#lead-form-section" class="bg-vibrant-accent text-ink-black px-12 py-5 text-xl font-extrabold hover:bg-metallic-gold transition-all duration-300 transform hover:-translate-y-1">
+        לפגישת אסטרטגיה בחינם
+      </a>
     </div>
-  </section>
-
-  <!-- ─── Social Proof Strip ─── -->
-  <div class="social-strip">
-    <p>💬 ליוויתי <strong>80+ בעלות עסק</strong> לבנות תוכן שמביא לקוחות. לא רק צפיות.</p>
   </div>
+</section>
 
-  <!-- ─── Pain Points ─── -->
-  <section class="section section--white">
-    <div class="container text-center">
-      <span class="tag">האם זה נשמע מוכר?</span>
-      <h2>את תלויה במזל שמישהי תזכור אותך.</h2>
-      <p class="section-sub section-sub--quote">"מה יקרה לי החודש אם פתאום אף אחת לא תפנה אותי?"</p>
-      <p class="section-sub">מפה לאוזן זו מתנה. אבל זה גם כלוב. כשההכנסה שלך תלויה במישהי אחרת שתזכור אותך ברגע הנכון, אין לך עסק. יש לך תקווה שיהיה עסק.</p>
+<!-- VSL Section -->
+<section class="bg-ink-black py-section-padding-lg px-margin-mobile">
+  <div class="max-w-3xl mx-auto text-center">
+    <span class="text-vibrant-accent font-bold font-label-caps uppercase tracking-widest block mb-6">צפי בסרטון הזה לפני שאת ממשיכה</span>
+    <div class="relative w-full" style="padding-top: 56.25%;">
+      <iframe
+        class="absolute inset-0 w-full h-full"
+        src="https://www.youtube.com/embed/jJSaqmN_LMg"
+        title="הדר סבג | שיטת התוכן"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
 
-      <div class="pain__grid">
-        <div class="pain__card">
-          <div class="pain__icon">🤞</div>
-          <h3>תלויה במי שתמליץ עלייך</h3>
-          <p>חודש טוב, חודש ריק. את לא יודעת מאיפה תגיע הלקוחה הבאה. כל שבועיים בלי פנייה והדאגה חוזרת.</p>
-        </div>
-        <div class="pain__card">
-          <div class="pain__icon">👀</div>
-          <h3>צפיות יש. לקוחות אין.</h3>
-          <p>הרילסים מקבלים אלפי צפיות. ההודעות בדממה. צפייה זה לא רצון לקנות.</p>
-        </div>
-        <div class="pain__card">
-          <div class="pain__icon">💭</div>
-          <h3>את מסבירה מה את עושה. לא למה אותך.</h3>
-          <p>"אני מטפלת ב..." "אני מאמנת ל...". אבל הלקוח לא קונה שיטה. הוא קונה פתרון לפחד שמעיק עליו.</p>
-        </div>
-        <div class="pain__card">
-          <div class="pain__icon">🎭</div>
-          <h3>התוכן נשמע "שיווקי" מדי</h3>
-          <p>גם לך לא נעים להעלות אותו. את מרגישה שאת מנסה למכור. וזה בדיוק מה שהלקוחות קולטים.</p>
+<!-- Social Strip -->
+<section class="bg-paper-cream py-10 border-y" style="border-color: #D4B090;">
+  <p class="text-ink-black font-headline-lg text-headline-lg text-center flex justify-center items-center gap-3 flex-wrap px-4">
+    <span class="text-vibrant-accent">●</span>
+    ליוויתי 80+ בעלות עסק לבנות תוכן שמביא לקוחות. לא רק צפיות.
+    <span class="text-vibrant-accent">●</span>
+  </p>
+</section>
+
+<!-- Pain Section -->
+<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
+  <div class="max-w-container-max mx-auto">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-20">
+      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
+        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">01</span>
+        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">רילסים ויראליים שנגמרים ב"כלום"</h3>
+        <p class="text-on-surface-variant">הצפיות בעננים, הלייקים זורמים, אבל ה-DM שלך שקט והיומן ריק.</p>
+      </div>
+      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
+        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">02</span>
+        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">הסתמכות על פה לאוזן</h3>
+        <p class="text-on-surface-variant">את חיה מ"פירורי" המלצות, בלי יכולת לשלוט על זרם הלקוחות החדשים.</p>
+      </div>
+      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
+        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">03</span>
+        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">"אני צריכה לחשוב על זה"</h3>
+        <p class="text-on-surface-variant">התוכן שלך לא מפרק התנגדויות מראש, מה שמשאיר אותך בשיחות מכירה מתישות.</p>
+      </div>
+      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
+        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">04</span>
+        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">שיווק אגרסיבי שלא נראה כמוך</h3>
+        <p class="text-on-surface-variant">ניסית את הדרכים ה"מוכחות" וזה הרגיש לך זול, לוחץ ולא מקצועי.</p>
+      </div>
+    </div>
+    <div class="border-r-4 pr-10 py-4 max-w-3xl mx-auto" style="border-color: #D4B090;">
+      <blockquote class="font-headline-xl text-headline-xl text-on-surface italic leading-snug">
+        "הלכת ליועצים שאמרו לך 'תהיי אותנטית', 'תעלי 3 סטורי ביום', 'תעשי ריקודים'. התוצאה? הפכת לעבד של האפליקציה במקום שהיא תעבוד בשבילך. הבעיה היא לא האותנטיות, הבעיה היא היעדר אסטרטגיה של המרה."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Personal Story -->
+<section class="bg-paper-cream py-section-padding-lg px-margin-mobile">
+  <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="relative">
+      <img alt="הדר סבג" class="w-full max-h-[600px] object-cover object-top transition-all duration-700 shadow-2xl" src="hadar-photo.png"/>
+      <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-vibrant-accent hidden md:block"></div>
+    </div>
+    <div class="text-ink-black">
+      <h2 class="font-headline-xl text-headline-xl mb-8">גם אני הייתי שם.</h2>
+      <div class="space-y-6 font-body-lg text-body-lg">
+        <p>השקעתי שעות בעריכת סרטונים, חשבתי על כותרות "מפוצצות" וחיכיתי שהקסם יקרה. הקסם לא קרה. קיבלתי המון מחמאות, אבל אפס לידים.</p>
+        <p>עד שהבנתי שהלקוחות שלי לא צריכים "בידור". הם צריכים הוכחה שאני מבינה אותם. הם צריכים לראות תהליך. הם צריכים לסמוך עליי עוד לפני שהם לוחצים על הלינק.</p>
+        <div class="bg-ink-black text-paper-cream p-8 mt-12 border-l-4 border-vibrant-accent">
+          <p class="font-quote-text text-quote-text text-metallic-gold font-bold">תפסיקי לרדוף צפיות. תתחילי להמיר אותן.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── What's Inside ─── -->
-  <section class="section section--pink">
-    <div class="container text-center">
-      <span class="tag">איך הליווי בונה תוכן שממיר</span>
-      <h2>שישה דברים שאף "קורס רילסים" לא יעשה בשבילך</h2>
-      <p class="section-sub">בליווי של 3 חודשים לא לומדות איך לערוך. בונות את התשתית שגורמת ללקוחות לבחור בך. וכן, גם מצלמות.</p>
-
-      <div class="benefits__grid">
-        <div class="benefit__card">
-          <div class="benefit__num">1</div>
-          <h3>ממפות את הראש של הלקוח</h3>
-          <p>לפני שאנחנו כותבות מילה, מגלות מה באמת עוצר אותו מלקנות. מאיזה כאב הוא בורח, ומה הוא רוצה בלי להגיד. שם נמצא הכסף.</p>
-        </div>
-        <div class="benefit__card">
-          <div class="benefit__num">2</div>
-          <h3>שוברות את 3 ההתנגדויות שהורגות לך לידים</h3>
-          <p>"זה לא בשבילי". "זה לא הזמן". "היא לא מבינה אותי". כל בעלת עסק נתקלת בהן. מעטות יודעות לפרק אותן בתוכן.</p>
-        </div>
-        <div class="benefit__card">
-          <div class="benefit__num">3</div>
-          <h3>מחלצות את המסרים האמיתיים שלך</h3>
-          <p>בלי תבניות. בלי AI גנרי. בלי לחקות בנות אחרות. אני שואלת את השאלות שאת לא שואלת את עצמך. התשובות הן התוכן.</p>
-        </div>
-        <div class="benefit__card">
-          <div class="benefit__num">4</div>
-          <h3>סרטונים שלא מרגישים שיווקיים</h3>
-          <p>הסיבה שאת לא אוהבת את התוכן שלך היא שהוא נשמע כמו פרסומת. אנחנו מצלמות אותך מדברת. על מה שאת באמת יודעת.</p>
-        </div>
-        <div class="benefit__card">
-          <div class="benefit__num">5</div>
-          <h3>מחממות לידים. לא רודפות צפיות.</h3>
-          <p>צפיות לא משלמות חשבונות. בונות מסע תוכן שמלווה את הלקוח מהסקרול הראשון עד ההודעה. הוא יגיע מוכן לקנות.</p>
-        </div>
-        <div class="benefit__card">
-          <div class="benefit__num">6</div>
-          <h3>ליווי 1:1 לאורך כל 3 החודשים</h3>
-          <p>פגישות זום אישיות איתי, ויום צילום מלא בתוך התהליך. את לא לבד מול המסך. ולא בקבוצת ווטסאפ של 80 בנות.</p>
-        </div>
-      </div>
-
-      <div class="section__cta">
-        <a href="#lead-form-section" class="btn btn--lg">לשיחת אסטרטגיה חינמית</a>
-      </div>
+<!-- The Method -->
+<section class="bg-ink-black py-section-padding-lg px-margin-mobile text-on-surface" id="method">
+  <div class="max-w-container-max mx-auto">
+    <div class="mb-20">
+      <h2 class="font-display-lg text-display-lg mb-4">השיטה שעובדת</h2>
+      <p class="text-outline text-xl max-w-xl">הדרך שלך למערכת תוכן עצמאית שמייצרת לקוחות 24/7</p>
     </div>
-  </section>
-
-  <!-- ─── Testimonials ─── -->
-  <section class="section section--white">
-    <div class="container text-center">
-      <span class="tag">מה אומרות עליי</span>
-      <h2>בעלות עסק שהפסיקו להיאבק עם תוכן</h2>
-      <p class="section-sub">כל עדות כאן היא ממטפלת, מאמנת או מלווה שעברה איתי את הליווי. והפכה את אינסטגרם ממקור תסכול למקור הכנסה.</p>
-
-      <div class="testimonials__grid">
-        <div class="testimonial__card">
-          <p class="testimonial__quote">המקום הזה שמור לחוות דעת אמיתית מאחת הלקוחות שלי. אשמח לקבל אותה בקרוב!</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">?</div>
-            <div>
-              <div class="testimonial__name">שם הלקוחה</div>
-              <div class="testimonial__role">תחום העסק</div>
-            </div>
-          </div>
-          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית. עדיפות לצילום מסך וואטסאפ עם תוצאה ספציפית ]</p>
+    <div class="space-y-12">
+      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
+        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">01</span>
+        <div class="max-w-2xl">
+          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מיפוי מוח הלקוח</h3>
+          <p class="text-body-lg">אנחנו צוללים פנימה להבין בדיוק מה כואב לו בלילה, מה עוצר אותו מלרכוש ומה הפנטזיה האמיתית שלו. לא ברמה הכללית — ברמה הניתוחית.</p>
         </div>
-
-        <div class="testimonial__card">
-          <p class="testimonial__quote">חוות דעת שנייה שתציג תוצאה ספציפית ומדידה שהלקוחה השיגה.</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">?</div>
-            <div>
-              <div class="testimonial__name">שם הלקוחה</div>
-              <div class="testimonial__role">תחום העסק</div>
-            </div>
-          </div>
-          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית. עדיפות לצילום מסך וואטסאפ עם תוצאה ספציפית ]</p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
+        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">02</span>
+        <div class="max-w-2xl">
+          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">פירוק 3 התנגדויות ברזל</h3>
+          <p class="text-body-lg">לכל לקוח יש 3 סיבות למה "לא עכשיו". אנחנו בונים תוכן שמפרק אותן אחת-אחת, כך שהוא מגיע לשיחה איתך כבר בשל לסגירה.</p>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
+        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">03</span>
+        <div class="max-w-2xl">
+          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מערך סמכות בוטיק</h3>
+          <p class="text-body-lg">מיצוב שלך כאוטוריטה בתחום שלך דרך שפה ויזואלית וטקסטואלית שמשדרת יוקרה וביטחון, בלי לנסות "למכור" חזק מדי.</p>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
+        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">04</span>
+        <div class="max-w-2xl">
+          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מכונת הלידים השקטה</h3>
+          <p class="text-body-lg">בניית אוטומציות תוכן ומשפכים שממשיכים לעבוד גם כשאת בחופשה או בשינה. הלידים פשוט נכנסים.</p>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
+        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">05</span>
+        <div class="max-w-2xl">
+          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">אופטימיזציה ומעקב</h3>
+          <p class="text-body-lg">אנחנו לא רק מעלים תוכן. אנחנו מנתחים מה עבד, מה המיר ואיך אנחנו משכפלים את ההצלחה הזו בחודש הבא.</p>
         </div>
       </div>
     </div>
-  </section>
+    <div class="mt-20 text-center">
+      <a class="inline-block bg-vibrant-accent text-ink-black px-16 py-6 text-2xl font-black hover:bg-metallic-gold transition-all transform hover:scale-105" href="#lead-form-section">
+        אני רוצה שיטה כזו ←
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- ─── About Hadar ─── -->
-  <section class="section section--pink">
-    <div class="container">
-      <div class="about__inner">
-        <div class="about__image">
-          <img src="hadar-photo.jpg" alt="הדר סבג" style="width:100%;max-height:480px;object-fit:contain;object-position:center bottom;border-radius:var(--radius);display:block;">
+<!-- Checklist -->
+<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
+  <div class="max-w-3xl mx-auto bg-surface p-10 md:p-20 border border-outline-variant/30">
+    <h2 class="font-headline-xl text-headline-xl mb-12 text-center">הליווי הזה בשבילך אם...</h2>
+    <ul class="space-y-6">
+      <li class="flex items-center gap-4 text-body-lg">
+        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
+        <span>את מוכרת שירות פרימיום ב-4 ספרות ומעלה.</span>
+      </li>
+      <li class="flex items-center gap-4 text-body-lg">
+        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
+        <span>יש לך עסק עובד אבל השיווק שלו מרגיש כמו רכבת הרים.</span>
+      </li>
+      <li class="flex items-center gap-4 text-body-lg">
+        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
+        <span>נמאס לך להיות "עוד אחת בפיד" ואת רוצה להיות האוטוריטה.</span>
+      </li>
+      <li class="flex items-center gap-4 text-body-lg">
+        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
+        <span>את מוכנה להשקיע בבניית תשתית שתחזיר את עצמה פי 10.</span>
+      </li>
+    </ul>
+    <div class="mt-16 text-center">
+      <a href="#lead-form-section" class="block w-full bg-vibrant-accent text-ink-black py-5 text-xl font-bold hover:bg-metallic-gold transition-all text-center">
+        אני רוצה שיטה כזו ←
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="bg-paper-cream py-section-padding-lg px-margin-mobile">
+  <div class="max-w-container-max mx-auto">
+    <h2 class="font-display-lg text-headline-xl text-ink-black mb-20 text-center">איך זה עובד בפועל?</h2>
+    <div class="grid md:grid-cols-5 gap-8">
+      <div class="text-center group">
+        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">1</div>
+        <h4 class="font-bold text-ink-black mb-2">שיחת אסטרטגיה</h4>
+        <p class="text-ink-black/70">אבחון עמוק של העסק.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">2</div>
+        <h4 class="font-bold text-ink-black mb-2">מיפוי קהל יעד</h4>
+        <p class="text-ink-black/70">בניית פרופיל פסיכולוגי.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">3</div>
+        <h4 class="font-bold text-ink-black mb-2">תכנון תוכן</h4>
+        <p class="text-ink-black/70">יצירת גאנט המרה חודשי.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">4</div>
+        <h4 class="font-bold text-ink-black mb-2">ליווי צמוד</h4>
+        <p class="text-ink-black/70">דיוקים על כל פוסט וסטורי.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">5</div>
+        <h4 class="font-bold text-ink-black mb-2">מערכת עובדת</h4>
+        <p class="text-ink-black/70">הפיכת התהליך לאוטומטי.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Editorial Callout -->
+<section class="bg-ink-black py-section-padding-lg text-center border-y border-metallic-gold/10">
+  <h2 class="font-display-lg text-display-lg text-on-surface opacity-10 leading-none">זה לא עוד קורס רילסים</h2>
+  <div class="-mt-8 md:-mt-16">
+    <h3 class="font-display-lg text-headline-xl text-vibrant-accent relative z-10">זה לא עוד קורס רילסים.</h3>
+    <p class="text-body-lg text-outline mt-8 max-w-2xl mx-auto px-margin-mobile">זו מערכת שלמה. אסטרטגיה עסקית שמתחפשת לתוכן. אנחנו לא בונות "סרטונים יפים", אנחנו בונות נכס דיגיטלי שמייצר כסף.</p>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="bg-paper-cream py-section-padding-lg px-margin-mobile" id="results">
+  <div class="max-w-container-max mx-auto">
+    <h2 class="font-display-lg text-headline-xl text-ink-black mb-16 text-center">דוגמאות לסרטונים שעשינו ללקוחות</h2>
+    <div class="grid md:grid-cols-3 gap-gutter">
+      <!-- Video 1 — replace src with real YouTube embed URL -->
+      <div class="flex flex-col gap-4">
+        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
+          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 1"></iframe>
         </div>
-        <div class="about__content">
-          <span class="tag">קצת עליי</span>
-          <h2>היי, אני הדר סבג</h2>
-          <p>
-            בגיל 14 ידעתי שאני רוצה להיות שחקנית. טסתי לטיול סולו של תשעה חודשים ב-13 מדינות. חזרתי עם שאלה אחת. איך נראים החיים שלי בעוד חמש שנים אם אני הולכת על המסלול הזה?
-          </p>
-          <p>
-            הבנתי שההחלטה תמיד בידיים של מישהו אחר. לא רציתי את זה.
-          </p>
-          <p>
-            נכנסתי לעבודה שהתבררה כהונאה. לא שילמו לי אף פעם. הבנתי שגם "עבודה מסודרת" לא מבטיחה כלום. הבנתי שאם אני רוצה ביטחון אמיתי, אני צריכה לבנות משהו שנשלט בידיים שלי.
-          </p>
-          <p>
-            אז גיליתי שיווק. ראיתי כמה סרטון קצר גרם לי לרצות לקנות ממישהי שמעולם לא הכרתי. הבנתי כמה כוח יש לזה.
-          </p>
-          <p>
-            היום אני יושבת איתך באישית. ממפה את הלקוחות שלך, מחלצת את המסרים שלך, ובונה איתך תוכן שעובד. את לא צריכה לדעת לערוך או לכתוב. את צריכה להמשיך להיות מומחית בתחום שלך. אני דואגת שכולן ידעו את זה.
-          </p>
+        <div class="text-center">
+          <p class="font-bold text-ink-black">מתווכת פרימיום</p>
+          <p style="color: #D4B090;" class="text-sm">12 לידים בשבוע הראשון</p>
+        </div>
+      </div>
+      <!-- Video 2 -->
+      <div class="flex flex-col gap-4">
+        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
+          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 2"></iframe>
+        </div>
+        <div class="text-center">
+          <p class="font-bold text-ink-black">מעצבת פנים</p>
+          <p style="color: #D4B090;" class="text-sm">סגירת פרויקט ב-50,000₪</p>
+        </div>
+      </div>
+      <!-- Video 3 -->
+      <div class="flex flex-col gap-4">
+        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
+          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 3"></iframe>
+        </div>
+        <div class="text-center">
+          <p class="font-bold text-ink-black">ייעוץ עסקי</p>
+          <p style="color: #D4B090;" class="text-sm">הכפלת פניות דרך הסטורי</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ─── Not For Everyone ─── -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 40px;">
-        <span class="tag">לפני שנמשיך</span>
-        <h2>האם זה מתאים לך?</h2>
-      </div>
-      <div class="fit-grid">
-        <div class="fit-card fit-card--yes">
-          <h3>✅ זה בשבילך אם</h3>
-          <ul>
-            <li>✅ את בעלת עסק שירות. מטפלת, מאמנת, מלווה, יועצת.</li>
-            <li>✅ את בתחילת הדרך הדיגיטלית ורוצה ללמוד נכון מההתחלה.</li>
-            <li>✅ את מוכנה להיות מעורבת בתהליך ולחלץ את הסיפור האמיתי שלך.</li>
-            <li>✅ את רוצה תוכן שמביא לקוחות. לא רק "נראות" יפה.</li>
-            <li>✅ את מוכנה להשקיע 3 חודשים ותקציב רציני בבניית מערכת תוכן שתשרת אותך שנים.</li>
-          </ul>
-        </div>
-        <div class="fit-card fit-card--no">
-          <h3>❌ זה לא בשבילך אם</h3>
-          <ul>
-            <li>❌ את מחפשת מישהי שתעשה הכל במקומך בלי שתהיי מעורבת.</li>
-            <li>❌ את מחפשת פתרון זול או "טריק" לאלגוריתם.</li>
-            <li>❌ את לא מוכנה להסתכל פנימה על ההצעה והמסרים שלך. רק לצלם רילסים.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="mt-16 text-center">
+      <blockquote class="font-quote-text text-ink-black border-r-4 border-vibrant-accent pr-6 py-2 inline-block text-right">
+        "לידים נכנסים גם כשאני לא מעלה... השיטה הזו פשוט שינתה לי את העסק"
+      </blockquote>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── Opt-in Form ─── -->
-  <section class="form-section" id="lead-form-section">
-    <div class="container text-center">
-      <span class="tag tag--on-pink">שיחת אסטרטגיה חינמית | 30 דקות</span>
-      <h2>בואי נדבר על העסק שלך</h2>
-      <p class="section-sub">בשיחה קצרה נבין מה ההתנגדות המרכזית שעוצרת לקוחות מלפנות, ולמה התוכן הנוכחי לא ממיר. עם או בלי ליווי בהמשך, את יוצאת עם בהירות.</p>
-      <div class="form-promise">
-        <p class="form-promise__title">מה תקבלי בשיחה:</p>
-        <ul>
-          <li>✅ אבחון של ההתנגדות שעוצרת את הלקוחות שלך מלקנות.</li>
-          <li>✅ הבנה למה התוכן הנוכחי מביא צפיות ולא לקוחות.</li>
-          <li>✅ רעיון לתוכן שאפשר ליישם השבוע, גם בלעדיי.</li>
-          <li>✅ פירוט מלא של הליווי וההשקעה. בלי משחקים.</li>
-        </ul>
-        <p class="form-promise__note">⭐ ללא עלות. ללא התחייבות. ללא שפיץ מכירה.</p>
+<!-- FAQ -->
+<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-headline-xl text-headline-xl mb-12 text-center">שאלות נפוצות</h2>
+    <div class="space-y-4">
+      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold text-lg list-none">
+          <span>זה מתאים לכל תחום?</span>
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant">השיטה מתאימה לכל עסק שמוכר ידע, שירות או פרימיום. כל עוד יש לך ערך אמיתי לתת, האסטרטגיה תעבוד.</p>
+      </details>
+      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold text-lg list-none">
+          <span>כמה זמן זה דורש ממני ביום?</span>
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant">המטרה היא לצמצם את הזמן שלך. אחרי בניית התשתית, את תשקיעי פחות זמן ב'לחשוב מה להעלות' ויותר זמן בעבודה עם לקוחות.</p>
+      </details>
+      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold text-lg list-none">
+          <span>אני חייבת להיחשף בפנים שלי?</span>
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant">חשיפה בונה אמון מהר יותר, אבל יש לנו דרכים לבנות אוטוריטה גם עם חשיפה מינימלית וממוקדת מאוד.</p>
+      </details>
+      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold text-lg list-none">
+          <span>כמה עולה הליווי?</span>
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant">השקעה רצינית. לא הוצאה. את הסכום המדויק אני אומרת בשיחת האסטרטגיה אחרי שאני מבינה את העסק שלך. השיחה עצמה חינמית לגמרי.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="bg-ink-black py-section-padding-lg px-margin-mobile relative overflow-hidden" id="lead-form-section">
+  <div class="max-w-container-max mx-auto relative z-10">
+    <div class="bg-paper-cream p-10 md:p-20 max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display-lg text-headline-xl text-ink-black mb-4">מוכנה להפעיל את מצב ההמרה?</h2>
+        <p class="text-ink-black/70 text-xl italic">תשאירי פרטים ונחזור אלייך לשיחת אבחון ראשונית ללא עלות.</p>
       </div>
 
-      <div class="form-box">
-        <form id="lead-form" novalidate>
-          <div class="form-group">
-            <label for="name">שם פרטי</label>
-            <input type="text" id="name" name="name" placeholder="השם שלך" autocomplete="name" required />
+      <form class="space-y-8" id="lead-form" novalidate>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="relative">
+            <label class="block font-label-caps text-ink-black mb-2" for="name">שם מלא</label>
+            <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="name" name="name" placeholder="השם שלך" type="text" autocomplete="name"/>
             <p class="form-error" id="name-error"></p>
           </div>
-
-          <div class="form-group">
-            <label for="email">אימייל</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
-            <p class="form-error" id="email-error"></p>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">טלפון</label>
-            <input type="tel" id="phone" name="phone" placeholder="050-0000000" autocomplete="tel" required />
+          <div class="relative">
+            <label class="block font-label-caps text-ink-black mb-2" for="phone">טלפון</label>
+            <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="phone" name="phone" placeholder="050-0000000" type="tel" autocomplete="tel"/>
             <p class="form-error" id="phone-error"></p>
           </div>
-
-          <button type="submit" class="btn btn--full" style="margin-top: 8px;">
-            אני רוצה לקבוע שיחת אסטרטגיה
-          </button>
-
-          <p class="form-fine-print">הפרטים שלך שמורים אצלי בלבד. נחזור אלייך תוך 24 שעות.</p>
-        </form>
-
-        <div class="form-success" id="lead-success">
-          <div class="form-success__icon">🎉</div>
-          <h3>!קיבלתי, מיד מעבירה אותך</h3>
-          <p>תועברי לדף עם פרטים נוספים על התהליך.</p>
         </div>
+        <div class="relative">
+          <label class="block font-label-caps text-ink-black mb-2" for="email">אימייל</label>
+          <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="email" name="email" placeholder="your@email.com" type="email" autocomplete="email"/>
+          <p class="form-error" id="email-error"></p>
+        </div>
+        <button class="w-full bg-ink-black text-paper-cream py-6 text-xl font-black hover:bg-vibrant-accent transition-all duration-500 uppercase tracking-widest" type="submit">
+          שגרי לי את זה ←
+        </button>
+        <p class="text-center text-ink-black/50 text-sm">הפרטים שלך שמורים אצלי בלבד. נחזור אלייך תוך 24 שעות.</p>
+      </form>
+
+      <div class="hidden text-center py-8" id="lead-success">
+        <div class="text-5xl mb-4">🎉</div>
+        <h3 class="font-headline-xl text-headline-xl text-ink-black mb-2">קיבלתי! מיד מעבירה אותך.</h3>
+        <p class="text-ink-black/70">תועברי לדף עם פרטים נוספים על התהליך.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── FAQ ─── -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 40px;">
-        <span class="tag">שאלות נפוצות</span>
-        <h2>כן, יש תשובה לשאלה שלך</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>איך נראה הליווי של 3 חודשים?</summary>
-          <p>פגישות זום 1:1 קבועות איתי לאורך התהליך. ממפות את ההתנגדויות של הלקוחות שלך, בונות את המסרים, וכותבות יחד את התוכן. בתוך התהליך משולב יום צילום מלא שבו מצלמות את הרילסים. את לא לבד בין הפגישות. אני זמינה לשאלות.</p>
-        </details>
-        <details>
-          <summary>כמה זה עולה?</summary>
-          <p>השקעה רצינית. לא הוצאה. את הסכום המדויק אני אומרת בשיחת האסטרטגיה אחרי שאני מבינה את העסק שלך. השיחה עצמה חינמית לגמרי. את יוצאת ממנה עם בהירות גם אם נחליט שזה לא הזמן.</p>
-        </details>
-        <details>
-          <summary>למה דווקא 3 חודשים ולא קורס מוקלט?</summary>
-          <p>כי תוכן שממיר לא נבנה משיעורים. הוא נבנה מהבנה עמוקה של הלקוחות שלך, של ההתנגדויות שלהם, ושל הקול האמיתי שלך. את כל זה אי אפשר ללמוד מסרטון. צריך מישהי שיושבת מולך, שואלת את השאלות הנכונות, ועוזרת לך לחלץ את המסרים שמכריעים.</p>
-        </details>
-        <details>
-          <summary>אני בתחילת הדרך הדיגיטלית. זה לא יהיה גדול עליי?</summary>
-          <p>להפך. זה בדיוק הזמן הנכון. הליווי נבנה במיוחד לבעלות עסק שעושות את הצעדים הראשונים שלהן ברשת. הרעיון הוא לעשות את זה נכון מההתחלה במקום לבזבז שנה על ניסיון וטעייה.</p>
-        </details>
-        <details>
-          <summary>אני לא מצולמת. זה יעבוד?</summary>
-          <p>רוב הלקוחות שלי "שונאות מצלמה" לפני שאנחנו מתחילות. ההבדל שאצלי לא מצלמים תוכן שיווקי. אנחנו מצלמות אותך מדברת על מה שאת באמת יודעת, בקול שלך. וזה תמיד יוצא אחרת.</p>
-        </details>
-        <details>
-          <summary>זה רלוונטי גם לתחום שלי?</summary>
-          <p>אם את מוכרת שירות של ליווי, טיפול, ייעוץ או הדרכה, התשובה כן. מטפלת, קואצ'רית, דיאטנית, יועצת עסקית, מדריכת יוגה. כל עסק שבו את הסמכות, ושבו ללקוח יש התנגדות שמעכבת אותו מלפנות.</p>
-        </details>
-      </div>
+<!-- Footer -->
+<footer class="bg-ink-black w-full py-section-padding-sm">
+  <div class="flex flex-col md:flex-row-reverse justify-between items-center gap-gutter px-margin-mobile max-w-container-max mx-auto">
+    <div class="font-headline-xl text-headline-xl text-paper-cream">הדר סבג</div>
+    <div class="flex gap-8 font-body-md text-body-md">
+      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#">אודות</a>
+      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#method">תהליך העבודה</a>
+      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#results">תוצאות</a>
+      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#lead-form-section">צרו קשר</a>
     </div>
-  </section>
+    <div class="text-metallic-gold font-body-md text-body-md">
+      כל הזכויות שמורות להדר סבג © 2025
+    </div>
+  </div>
+</footer>
 
-  <!-- ─── Footer ─── -->
-  <footer class="footer">
-    <p>© 2025 הדר סבג · ליווי תוכן לבעלות עסקי שירות</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('section > div').forEach(el => {
+    el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+    observer.observe(el);
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>
