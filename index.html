@@ -1,499 +1,158 @@
 <!DOCTYPE html>
-<html class="dark" dir="rtl" lang="he">
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>הדר סבג | שיטת התוכן להמרת לקוחות</title>
-  <meta name="description" content="שיטת תוכן שפותרת ללקוח את כל ההתנגדויות וגורמת לו לפנות מעצמו. ליווי 1:1 לבעלות עסקי שירות." />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>הדר סבג | הדרכה חינמית לנטרול התנגדויות</title>
+  <meta name="description" content="הדרכה חינמית: 3 ההתנגדויות שהורסות לך מכירות ואיך לנטרל אותן בתוכן — עוד לפני שהלקוחה הגיעה לשיחה." />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <script id="tailwind-config">
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "error": "#ffb4ab",
-            "paper-cream": "#F5F1EA",
-            "surface-container-high": "#2a2a2c",
-            "on-tertiary-container": "#e91e63",
-            "metallic-gold": "#D4B090",
-            "surface-container-low": "#1b1b1d",
-            "on-tertiary": "#660025",
-            "ink-black": "#0A0A0A",
-            "primary": "#c9c6c5",
-            "secondary": "#c9c6c0",
-            "on-tertiary-fixed-variant": "#900038",
-            "on-secondary-fixed-variant": "#484742",
-            "surface-variant": "#353437",
-            "on-tertiary-fixed": "#400014",
-            "on-secondary-container": "#b8b5ae",
-            "surface-container-highest": "#353437",
-            "secondary-container": "#484742",
-            "inverse-on-surface": "#303032",
-            "secondary-fixed-dim": "#c9c6c0",
-            "on-surface": "#e5e1e4",
-            "on-primary-fixed-variant": "#474646",
-            "tertiary-fixed": "#ffd9de",
-            "on-primary": "#313030",
-            "on-secondary": "#31302c",
-            "on-error-container": "#ffdad6",
-            "surface-container": "#1f1f21",
-            "outline": "#8e9192",
-            "outline-variant": "#444748",
-            "surface-container-lowest": "#0e0e10",
-            "primary-fixed-dim": "#c9c6c5",
-            "vibrant-accent": "#E91E63",
-            "on-surface-variant": "#c4c7c7",
-            "primary-fixed": "#e5e2e1",
-            "error-container": "#93000a",
-            "inverse-surface": "#e5e1e4",
-            "on-primary-container": "#7b7979",
-            "on-error": "#690005",
-            "inverse-primary": "#5f5e5e",
-            "surface": "#131315",
-            "tertiary-fixed-dim": "#ffb2be",
-            "background": "#131315",
-            "on-primary-fixed": "#1c1b1b",
-            "surface-tint": "#c9c6c5",
-            "tertiary": "#ffb2be",
-            "tertiary-container": "#1f0006",
-            "on-background": "#e5e1e4",
-            "surface-bright": "#39393b",
-            "surface-dim": "#131315",
-            "on-secondary-fixed": "#1c1c18",
-            "primary-container": "#0a0a0a",
-            "secondary-fixed": "#e6e2db"
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          spacing: {
-            "section-padding-sm": "64px",
-            "gutter": "24px",
-            "unit": "8px",
-            "margin-mobile": "20px",
-            "container-max": "1200px",
-            "section-padding-lg": "120px"
+            "primary": "#b20052",
+            "primary-container": "#d42a6a",
+            "on-primary": "#ffffff",
+            "secondary": "#6a5a5f",
+            "on-surface": "#1a1c1c",
+            "on-surface-variant": "#594045",
+            "outline-variant": "#e1bec4",
+            "surface": "#f9f9f9",
+            "background": "#f9f9f9"
           },
           fontFamily: {
-            "display-lg": ["Heebo"],
-            "label-caps": ["Heebo"],
-            "body-md": ["Assistant"],
-            "body-lg": ["Assistant"],
-            "quote-text": ["Assistant"],
-            "headline-lg": ["Heebo"],
-            "headline-xl": ["Heebo"]
-          },
-          fontSize: {
-            "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-            "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
-            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "quote-text": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-            "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
-            "headline-xl": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            "sans": ["Assistant", "sans-serif"]
           }
-        },
+        }
       }
     }
   </script>
   <style>
-    body { background-color: #131315; color: #e5e1e4; }
+    body { font-family: 'Assistant', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-    .hero-gradient { background: radial-gradient(circle at 50% 50%, #1a1a1c 0%, #0a0a0a 100%); }
-    .gold-border-top { border-top: 2px solid #D4B090; }
-    .form-error { color: #E91E63; font-size: 13px; margin-top: 4px; min-height: 18px; display: none; }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .organic-blob {
+      position: absolute;
+      z-index: 0;
+      filter: blur(70px);
+      opacity: 0.18;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .form-error { color: #b20052; font-size: 12px; margin-top: 4px; min-height: 16px; display: none; }
     .form-error.visible { display: block; }
+    .ltr { direction: ltr; text-align: right; }
   </style>
 </head>
-<body class="font-body-md">
+<body class="overflow-x-hidden">
 
-<!-- Header / Navbar -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-20">
-  <nav class="flex flex-row justify-between items-center px-margin-mobile md:px-section-padding-sm max-w-container-max mx-auto h-full">
-    <div class="font-display-lg text-headline-xl text-on-surface tracking-tighter">הדר סבג</div>
-    <div class="hidden md:flex items-center gap-8">
-      <a class="text-vibrant-accent font-bold hover:text-metallic-gold transition-colors" href="#">בית</a>
-      <a class="text-on-surface-variant font-medium hover:text-metallic-gold transition-colors" href="#method">השיטה</a>
-      <a class="text-on-surface-variant font-medium hover:text-metallic-gold transition-colors" href="#results">תוצאות</a>
-    </div>
-    <a class="bg-vibrant-accent text-ink-black px-6 py-2 font-bold hover:bg-metallic-gold transition-all flex items-center gap-2" href="#lead-form-section">
-      לפגישת אסטרטגיה בחינם לגמרי ←
-    </a>
-  </nav>
-</header>
+<main class="relative min-h-screen flex flex-col items-center justify-center py-16 px-4 overflow-hidden">
 
-<!-- Hero Section -->
-<section class="hero-gradient pt-40 pb-24 md:py-section-padding-lg text-center px-margin-mobile">
-  <div class="max-w-4xl mx-auto">
-    <span class="text-vibrant-accent font-bold font-label-caps uppercase tracking-widest block mb-6">הדר סבג חושפת את שיטת התוכן שגורמת ללקוחות לפנות מעצמם</span>
-    <h1 class="font-display-lg text-display-lg mb-8 text-on-surface">להפסיק להשתעבד<br/>לאינסטגרם</h1>
-    <p class="font-headline-lg text-headline-lg text-on-surface-variant mb-6 max-w-2xl mx-auto">תוכן מקצועי שפותר ללקוח את כל ההתנגדויות, וגורם לו לפנות מעצמו.</p>
-    <p class="font-body-lg text-body-lg text-outline mb-12 max-w-xl mx-auto">תפסיקי לרדוף אחרי טרנדים וצפיות ריקות. הגיע הזמן להכפיל את כמות הלקוחות שלך בעזרת אסטרטגיה מדויקת שהופכת את הפיד למכונת מכירות.</p>
-    <div class="relative w-full max-w-3xl mx-auto mb-12" style="padding-top: 56.25%;">
-      <iframe
-        class="absolute inset-0 w-full h-full"
-        src="https://www.youtube.com/embed/jJSaqmN_LMg"
-        title="הדר סבג | שיטת התוכן"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="flex flex-col md:flex-row justify-center gap-4">
-      <a href="#lead-form-section" class="bg-vibrant-accent text-ink-black px-12 py-5 text-xl font-extrabold hover:bg-metallic-gold transition-all duration-300 transform hover:-translate-y-1">
-        לפגישת אסטרטגיה בחינם לגמרי
-      </a>
-    </div>
+  <!-- Background -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <img
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      src="https://lh3.googleusercontent.com/aida/AP1WRLsULMeMi8wMW7ruFWUVfTvNm7mtm3_Ym3w6ZP0y71iUjcyJK81mWKeex9GbJin7GNmT3TXGWsgbFht80gHvEc_Mk9izJOYZQBvJYxIdRaEQ4BPMDp8NfKWlFLwWAFweXRxCP3jsAH7dCA9WzZR3TuBLcqFfA1iZGDi70dIZzNVaSaO0IXzKJeAN8bf1TZq6zw_9FWSD_PXytT0SUK5oF4Wggy-G5TqEl4l8qrgQn-kD5Ue2lmOsCBfvyPw"
+    >
+    <div class="organic-blob bg-[#b20052] w-[500px] h-[500px] -top-20 -right-20"></div>
+    <div class="organic-blob bg-[#6a5a5f] w-[400px] h-[400px] -bottom-20 -left-20"></div>
   </div>
-</section>
 
-<!-- Social Strip -->
-<section class="bg-paper-cream py-10 border-y" style="border-color: #D4B090;">
-  <p class="text-ink-black font-headline-lg text-headline-lg text-center flex justify-center items-center gap-3 flex-wrap px-4">
-    <span class="text-vibrant-accent">●</span>
-    ליוויתי 80+ בעלות עסק לבנות תוכן שמביא לקוחות. לא רק צפיות.
-    <span class="text-vibrant-accent">●</span>
-  </p>
-</section>
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-2xl flex flex-col items-center text-center">
 
-<!-- Pain Section -->
-<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
-  <div class="max-w-container-max mx-auto">
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-20">
-      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
-        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">01</span>
-        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">רילסים ויראליים שנגמרים ב"כלום"</h3>
-        <p class="text-on-surface-variant">הצפיות בעננים, הלייקים זורמים, אבל ה-DM שלך שקט והיומן ריק.</p>
-      </div>
-      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
-        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">02</span>
-        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">הסתמכות על פה לאוזן</h3>
-        <p class="text-on-surface-variant">את חיה מ"פירורי" המלצות, בלי יכולת לשלוט על זרם הלקוחות החדשים.</p>
-      </div>
-      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
-        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">03</span>
-        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">"אני צריכה לחשוב על זה"</h3>
-        <p class="text-on-surface-variant">התוכן שלך לא מפרק התנגדויות מראש, מה שמשאיר אותך בשיחות מכירה מתישות.</p>
-      </div>
-      <div class="bg-surface p-8 gold-border-top transition-all hover:bg-surface-container-high">
-        <span class="text-metallic-gold font-display-lg text-headline-xl block mb-4 opacity-50">04</span>
-        <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">שיווק אגרסיבי שלא נראה כמוך</h3>
-        <p class="text-on-surface-variant">ניסית את הדרכים ה"מוכחות" וזה הרגיש לך זול, לוחץ ולא מקצועי.</p>
-      </div>
-    </div>
-    <div class="border-r-4 pr-10 py-4 max-w-3xl mx-auto" style="border-color: #D4B090;">
-      <blockquote class="font-headline-xl text-headline-xl text-on-surface italic leading-snug">
-        "הלכת ליועצים שאמרו לך 'תהיי אותנטית', 'תעלי 3 סטורי ביום', 'תעשי ריקודים'. התוצאה? הפכת לעבד של האפליקציה במקום שהיא תעבוד בשבילך. הבעיה היא לא האותנטיות, הבעיה היא היעדר אסטרטגיה של המרה."
-      </blockquote>
-    </div>
-  </div>
-</section>
+    <!-- Brand -->
+    <p class="text-sm font-bold tracking-widest text-[#b20052] uppercase mb-8 opacity-80">הדר סבג</p>
 
-<!-- Personal Story -->
-<section class="bg-paper-cream py-section-padding-lg px-margin-mobile">
-  <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div class="relative">
-      <img alt="הדר סבג" class="w-full max-h-[600px] object-cover object-top transition-all duration-700 shadow-2xl" src="hadar-photo.png"/>
-      <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-vibrant-accent hidden md:block"></div>
-    </div>
-    <div class="text-ink-black">
-      <h2 class="font-headline-xl text-headline-xl mb-8">גם אני הייתי שם.</h2>
-      <div class="space-y-6 font-body-lg text-body-lg">
-        <p>השקעתי שעות בעריכת סרטונים, חשבתי על כותרות "מפוצצות" וחיכיתי שהקסם יקרה. הקסם לא קרה. קיבלתי המון מחמאות, אבל אפס לידים.</p>
-        <p>עד שהבנתי שהלקוחות שלי לא צריכים "בידור". הם צריכים הוכחה שאני מבינה אותם. הם צריכים לראות תהליך. הם צריכים לסמוך עליי עוד לפני שהם לוחצים על הלינק.</p>
-        <div class="bg-ink-black text-paper-cream p-8 mt-12 border-l-4 border-vibrant-accent">
-          <p class="font-quote-text text-quote-text text-metallic-gold font-bold">תפסיקי לרדוף צפיות. תתחילי להמיר אותן.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Headline -->
+    <h1 class="text-[32px] md:text-[48px] font-bold leading-tight text-on-surface mb-5" style="letter-spacing: -0.02em;">
+      תפסיקי לאבד לקוחות<br>
+      שכבר <span class="text-primary">רוצים לקנות</span>
+    </h1>
 
-<!-- The Method -->
-<section class="bg-ink-black py-section-padding-lg px-margin-mobile text-on-surface" id="method">
-  <div class="max-w-container-max mx-auto">
-    <div class="mb-20">
-      <h2 class="font-display-lg text-display-lg mb-4">השיטה שעובדת</h2>
-      <p class="text-outline text-xl max-w-xl">הדרך שלך למערכת תוכן עצמאית שמייצרת לקוחות 24/7</p>
-    </div>
-    <div class="space-y-12">
-      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
-        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">01</span>
-        <div class="max-w-2xl">
-          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מיפוי מוח הלקוח</h3>
-          <p class="text-body-lg">אנחנו צוללים פנימה להבין בדיוק מה כואב לו בלילה, מה עוצר אותו מלרכוש ומה הפנטזיה האמיתית שלו. לא ברמה הכללית — ברמה הניתוחית.</p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
-        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">02</span>
-        <div class="max-w-2xl">
-          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">פירוק 3 התנגדויות ברזל</h3>
-          <p class="text-body-lg">לכל לקוח יש 3 סיבות למה "לא עכשיו". אנחנו בונים תוכן שמפרק אותן אחת-אחת, כך שהוא מגיע לשיחה איתך כבר בשל לסגירה.</p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
-        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">03</span>
-        <div class="max-w-2xl">
-          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מערך סמכות בוטיק</h3>
-          <p class="text-body-lg">מיצוב שלך כאוטוריטה בתחום שלך דרך שפה ויזואלית וטקסטואלית שמשדרת יוקרה וביטחון, בלי לנסות "למכור" חזק מדי.</p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
-        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">04</span>
-        <div class="max-w-2xl">
-          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">מכונת הלידים השקטה</h3>
-          <p class="text-body-lg">בניית אוטומציות תוכן ומשפכים שממשיכים לעבוד גם כשאת בחופשה או בשינה. הלידים פשוט נכנסים.</p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row gap-12 items-start border-b border-surface-variant pb-12">
-        <span class="text-metallic-gold font-display-lg text-display-lg opacity-20">05</span>
-        <div class="max-w-2xl">
-          <h3 class="font-headline-xl text-headline-xl mb-4 text-vibrant-accent">אופטימיזציה ומעקב</h3>
-          <p class="text-body-lg">אנחנו לא רק מעלים תוכן. אנחנו מנתחים מה עבד, מה המיר ואיך אנחנו משכפלים את ההצלחה הזו בחודש הבא.</p>
-        </div>
-      </div>
-    </div>
-    <div class="mt-20 text-center">
-      <a class="inline-block bg-vibrant-accent text-ink-black px-16 py-6 text-2xl font-black hover:bg-metallic-gold transition-all transform hover:scale-105" href="#lead-form-section">
-        לפגישת אסטרטגיה בחינם לגמרי לגמרי ←
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Subtitle -->
+    <p class="text-[18px] leading-relaxed text-secondary max-w-xl mb-10">
+      אחרי שעבדתי עם <strong class="text-on-surface">80+ בעלי עסקים</strong>, למדתי מה השיטה לגרום ללקוח להגיע לשיחה בלי התנגדויות, מוכן לקנות — על ידי <strong class="text-on-surface">נטרול ההתנגדויות כבר בשיווק</strong>.
+      <br><br>רוצה ללמוד איך? 👇
+    </p>
 
-<!-- Checklist -->
-<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
-  <div class="max-w-3xl mx-auto bg-surface p-10 md:p-20 border border-outline-variant/30">
-    <h2 class="font-headline-xl text-headline-xl mb-12 text-center">הליווי הזה בשבילך אם...</h2>
-    <ul class="space-y-6">
-      <li class="flex items-center gap-4 text-body-lg">
-        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
-        <span>את מוכרת שירות פרימיום ב-4 ספרות ומעלה.</span>
-      </li>
-      <li class="flex items-center gap-4 text-body-lg">
-        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
-        <span>יש לך עסק עובד אבל השיווק שלו מרגיש כמו רכבת הרים.</span>
-      </li>
-      <li class="flex items-center gap-4 text-body-lg">
-        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
-        <span>נמאס לך להיות "עוד אחת בפיד" ואת רוצה להיות האוטוריטה.</span>
-      </li>
-      <li class="flex items-center gap-4 text-body-lg">
-        <span class="material-symbols-outlined text-vibrant-accent">check_circle</span>
-        <span>את מוכנה להשקיע בבניית תשתית שתחזיר את עצמה פי 10.</span>
-      </li>
-    </ul>
-    <div class="mt-16 text-center">
-      <a href="#lead-form-section" class="block w-full bg-vibrant-accent text-ink-black py-5 text-xl font-bold hover:bg-metallic-gold transition-all text-center">
-        לפגישת אסטרטגיה בחינם לגמרי לגמרי ←
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Form Card -->
+    <div class="w-full glass-panel p-8 md:p-10 rounded-2xl shadow-[0_20px_48px_rgba(178,0,82,0.13)] border border-[#e1bec4]/40">
 
-<!-- Process -->
-<section class="bg-paper-cream py-section-padding-lg px-margin-mobile">
-  <div class="max-w-container-max mx-auto">
-    <h2 class="font-display-lg text-headline-xl text-ink-black mb-20 text-center">איך זה עובד בפועל?</h2>
-    <div class="grid md:grid-cols-5 gap-8">
-      <div class="text-center group">
-        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">1</div>
-        <h4 class="font-bold text-ink-black mb-2">שיחת אסטרטגיה</h4>
-        <p class="text-ink-black/70">אבחון עמוק של העסק.</p>
-      </div>
-      <div class="text-center group">
-        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">2</div>
-        <h4 class="font-bold text-ink-black mb-2">מיפוי קהל יעד</h4>
-        <p class="text-ink-black/70">בניית פרופיל פסיכולוגי.</p>
-      </div>
-      <div class="text-center group">
-        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">3</div>
-        <h4 class="font-bold text-ink-black mb-2">תכנון תוכן</h4>
-        <p class="text-ink-black/70">יצירת גאנט המרה חודשי.</p>
-      </div>
-      <div class="text-center group">
-        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">4</div>
-        <h4 class="font-bold text-ink-black mb-2">ליווי צמוד</h4>
-        <p class="text-ink-black/70">דיוקים על כל פוסט וסטורי.</p>
-      </div>
-      <div class="text-center group">
-        <div class="w-16 h-16 bg-ink-black text-paper-cream rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:bg-vibrant-accent transition-colors">5</div>
-        <h4 class="font-bold text-ink-black mb-2">מערכת עובדת</h4>
-        <p class="text-ink-black/70">הפיכת התהליך לאוטומטי.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <form id="lead-form" class="space-y-5 flex flex-col items-center" novalidate>
 
-<!-- Editorial Callout -->
-<section class="bg-ink-black py-section-padding-lg text-center border-y border-metallic-gold/10">
-  <h2 class="font-display-lg text-display-lg text-on-surface opacity-10 leading-none">זה לא עוד קורס רילסים</h2>
-  <div class="-mt-8 md:-mt-16">
-    <h3 class="font-display-lg text-headline-xl text-vibrant-accent relative z-10">זה לא עוד קורס רילסים.</h3>
-    <p class="text-body-lg text-outline mt-8 max-w-2xl mx-auto px-margin-mobile">זו מערכת שלמה. אסטרטגיה עסקית שמתחפשת לתוכן. אנחנו לא בונות "סרטונים יפים", אנחנו בונות נכס דיגיטלי שמייצר כסף.</p>
-  </div>
-</section>
+        <div class="w-full text-right space-y-4">
 
-<!-- Results -->
-<section class="bg-paper-cream py-section-padding-lg px-margin-mobile" id="results">
-  <div class="max-w-container-max mx-auto">
-    <h2 class="font-display-lg text-headline-xl text-ink-black mb-16 text-center">דוגמאות לסרטונים שעשינו ללקוחות</h2>
-    <div class="grid md:grid-cols-3 gap-gutter">
-      <!-- Video 1 — replace src with real YouTube embed URL -->
-      <div class="flex flex-col gap-4">
-        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
-          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 1"></iframe>
-        </div>
-        <div class="text-center">
-          <p class="font-bold text-ink-black">מתווכת פרימיום</p>
-          <p style="color: #D4B090;" class="text-sm">12 לידים בשבוע הראשון</p>
-        </div>
-      </div>
-      <!-- Video 2 -->
-      <div class="flex flex-col gap-4">
-        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
-          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 2"></iframe>
-        </div>
-        <div class="text-center">
-          <p class="font-bold text-ink-black">מעצבת פנים</p>
-          <p style="color: #D4B090;" class="text-sm">סגירת פרויקט ב-50,000₪</p>
-        </div>
-      </div>
-      <!-- Video 3 -->
-      <div class="flex flex-col gap-4">
-        <div class="aspect-[9/16] bg-ink-black relative overflow-hidden">
-          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון לקוחה 3"></iframe>
-        </div>
-        <div class="text-center">
-          <p class="font-bold text-ink-black">ייעוץ עסקי</p>
-          <p style="color: #D4B090;" class="text-sm">הכפלת פניות דרך הסטורי</p>
-        </div>
-      </div>
-    </div>
-    <div class="mt-16 text-center">
-      <blockquote class="font-quote-text text-ink-black border-r-4 border-vibrant-accent pr-6 py-2 inline-block text-right">
-        "לידים נכנסים גם כשאני לא מעלה... השיטה הזו פשוט שינתה לי את העסק"
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="bg-surface-container-low py-section-padding-lg px-margin-mobile">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-headline-xl text-headline-xl mb-12 text-center">שאלות נפוצות</h2>
-    <div class="space-y-4">
-      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
-        <summary class="flex justify-between items-center font-bold text-lg list-none">
-          <span>זה מתאים לכל תחום?</span>
-          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-4 text-on-surface-variant">השיטה מתאימה לכל עסק שמוכר ידע, שירות או פרימיום. כל עוד יש לך ערך אמיתי לתת, האסטרטגיה תעבוד.</p>
-      </details>
-      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
-        <summary class="flex justify-between items-center font-bold text-lg list-none">
-          <span>כמה זמן זה דורש ממני ביום?</span>
-          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-4 text-on-surface-variant">המטרה היא לצמצם את הזמן שלך. אחרי בניית התשתית, את תשקיעי פחות זמן ב'לחשוב מה להעלות' ויותר זמן בעבודה עם לקוחות.</p>
-      </details>
-      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
-        <summary class="flex justify-between items-center font-bold text-lg list-none">
-          <span>אני חייבת להיחשף בפנים שלי?</span>
-          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-4 text-on-surface-variant">חשיפה בונה אמון מהר יותר, אבל יש לנו דרכים לבנות אוטוריטה גם עם חשיפה מינימלית וממוקדת מאוד.</p>
-      </details>
-      <details class="group bg-surface p-6 border border-outline-variant/20 cursor-pointer">
-        <summary class="flex justify-between items-center font-bold text-lg list-none">
-          <span>כמה עולה הליווי?</span>
-          <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-4 text-on-surface-variant">השקעה רצינית. לא הוצאה. את הסכום המדויק אני אומרת בשיחת האסטרטגיה אחרי שאני מבינה את העסק שלך. השיחה עצמה חינמית לגמרי.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Form -->
-<section class="bg-ink-black py-section-padding-lg px-margin-mobile relative overflow-hidden" id="lead-form-section">
-  <div class="max-w-container-max mx-auto relative z-10">
-    <div class="bg-paper-cream p-10 md:p-20 max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="font-display-lg text-headline-xl text-ink-black mb-4">מוכנה להפעיל את מצב ההמרה?</h2>
-        <p class="text-ink-black/70 text-xl italic">תשאירי פרטים ונחזור אלייך לשיחת אבחון ראשונית ללא עלות.</p>
-      </div>
-
-      <form class="space-y-8" id="lead-form" novalidate>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="relative">
-            <label class="block font-label-caps text-ink-black mb-2" for="name">שם מלא</label>
-            <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="name" name="name" placeholder="השם שלך" type="text" autocomplete="name"/>
+          <div class="space-y-1">
+            <label class="block text-sm font-semibold text-secondary" for="name">שם מלא</label>
+            <input
+              id="name" name="name" type="text" placeholder="הכניסי את שמך המלא"
+              autocomplete="name"
+              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans"
+            >
             <p class="form-error" id="name-error"></p>
           </div>
-          <div class="relative">
-            <label class="block font-label-caps text-ink-black mb-2" for="phone">טלפון</label>
-            <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="phone" name="phone" placeholder="050-0000000" type="tel" autocomplete="tel"/>
+
+          <div class="space-y-1">
+            <label class="block text-sm font-semibold text-secondary" for="email">אימייל</label>
+            <input
+              id="email" name="email" type="email" placeholder="example@email.com"
+              autocomplete="email"
+              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans ltr"
+            >
+            <p class="form-error" id="email-error"></p>
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-sm font-semibold text-secondary" for="phone">טלפון</label>
+            <input
+              id="phone" name="phone" type="tel" placeholder="050-000-0000"
+              autocomplete="tel"
+              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans ltr"
+            >
             <p class="form-error" id="phone-error"></p>
           </div>
+
         </div>
-        <div class="relative">
-          <label class="block font-label-caps text-ink-black mb-2" for="email">אימייל</label>
-          <input class="w-full bg-transparent border-0 border-b-2 border-ink-black focus:ring-0 focus:border-vibrant-accent transition-colors py-3 text-ink-black placeholder-ink-black/40" id="email" name="email" placeholder="your@email.com" type="email" autocomplete="email"/>
-          <p class="form-error" id="email-error"></p>
-        </div>
-        <button class="w-full bg-ink-black text-paper-cream py-6 text-xl font-black hover:bg-vibrant-accent transition-all duration-500 uppercase tracking-widest" type="submit">
-          לפגישת אסטרטגיה בחינם לגמרי ←
+
+        <button
+          type="submit"
+          class="w-full h-16 mt-2 rounded-full bg-primary text-white text-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary-container hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+        >
+          אני רוצה גישה להדרכה בחינם
+          <span class="material-symbols-outlined">arrow_back</span>
         </button>
-        <p class="text-center text-ink-black/50 text-sm">הפרטים שלך שמורים אצלי בלבד. נחזור אלייך תוך 24 שעות.</p>
+
+        <p class="text-xs text-secondary/60 italic">* ההדרכה תישלח ישירות למייל שהזנת, ללא עלות.</p>
+
       </form>
 
-      <div class="hidden text-center py-8" id="lead-success">
+      <!-- Success State -->
+      <div id="lead-success" class="hidden text-center py-6">
         <div class="text-5xl mb-4">🎉</div>
-        <h3 class="font-headline-xl text-headline-xl text-ink-black mb-2">קיבלתי! מיד מעבירה אותך.</h3>
-        <p class="text-ink-black/70">תועברי לדף עם פרטים נוספים על התהליך.</p>
+        <h3 class="text-2xl font-bold text-on-surface mb-2">נשלח! מיד מעבירה אותך.</h3>
+        <p class="text-secondary">ההדרכה בדרך אלייך.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer class="bg-ink-black w-full py-section-padding-sm">
-  <div class="flex flex-col md:flex-row-reverse justify-between items-center gap-gutter px-margin-mobile max-w-container-max mx-auto">
-    <div class="font-headline-xl text-headline-xl text-paper-cream">הדר סבג</div>
-    <div class="flex gap-8 font-body-md text-body-md">
-      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#">אודות</a>
-      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#method">תהליך העבודה</a>
-      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#results">תוצאות</a>
-      <a class="text-on-surface-variant hover:text-vibrant-accent transition-all" href="#lead-form-section">צרו קשר</a>
     </div>
-    <div class="text-metallic-gold font-body-md text-body-md">
-      כל הזכויות שמורות להדר סבג © 2025
-    </div>
-  </div>
-</footer>
 
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-        entry.target.classList.remove('opacity-0', 'translate-y-10');
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('section > div').forEach(el => {
-    el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-    observer.observe(el);
-  });
-</script>
+    <!-- Social proof line -->
+    <p class="mt-8 text-sm text-secondary/70">
+      80+ בעלי עסקים כבר נטרלו את ההתנגדויות בשיווק שלהם
+    </p>
+
+  </div>
+
+</main>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -3,249 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>הצעד הבא שלך | הדר סבג | ליווי תוכן</title>
-  <meta name="description" content="קיבלנו את הפרטים שלך. צפי בסרטון על תהליך הליווי, ומלאי את פרטי השיחה כדי שנחזור אלייך תוך 24 שעות." />
-  <link rel="stylesheet" href="style.css" />
+  <title>ההדרכה שלך | הדר סבג</title>
+  <meta name="description" content="ההדרכה החינמית שלך — 3 ההתנגדויות שהורסות לך מכירות ואיך לנטרל אותן בתוכן." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <style>
-    .tutorial-header {
-      background: linear-gradient(135deg, var(--pink-light) 0%, #fff 100%);
-      padding: 56px 24px 48px;
-      text-align: center;
+    body { font-family: 'Assistant', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
-    .tutorial-header h1 { margin-bottom: 12px; }
-    .tutorial-header p  { font-size: 1.1rem; }
-    @media (max-width: 600px) {
-      .tutorial-header { padding: 36px 20px 28px; }
-      .tutorial-header p { font-size: 0.98rem; }
-    }
+    .video-wrapper { position: relative; padding-top: 56.25%; background: #0d0d0f; border-radius: 16px; overflow: hidden; }
+    .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #666; }
+    .play-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(178,0,82,0.15); border: 2px solid rgba(178,0,82,0.3); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+    .form-error { color: #b20052; font-size: 12px; margin-top: 4px; min-height: 16px; display: none; }
+    .form-error.visible { display: block; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .chevron { transform: rotate(180deg); }
+    .chevron { transition: transform 0.2s; display: inline-block; }
+    .ltr { direction: ltr; text-align: right; }
   </style>
 </head>
 <body>
 
-  <!-- ─── Navbar ─── -->
-  <nav class="navbar" aria-label="ניווט ראשי">
-    <div class="navbar__inner">
-      <div class="navbar__logo">הדר <span>כהן</span></div>
-      <a href="#discovery-form-section" class="btn navbar__cta">להשלמת פרטים ←</a>
-    </div>
-  </nav>
+<!-- Nav -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-[#e1bec4]/40">
+  <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+    <span class="font-bold text-lg tracking-tight text-[#1a1c1c]">הדר סבג</span>
+    <a href="#discovery-form-section" class="text-sm font-bold text-[#b20052] hover:underline flex items-center gap-1">
+      לשיחת אסטרטגיה בחינם
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+    </a>
+  </div>
+</nav>
 
-  <!-- ─── Tutorial Header ─── -->
-  <section class="tutorial-header">
-    <div class="container">
-      <span class="tag">קיבלתי את הפרטים שלך 🎬</span>
-      <h1>הי<span id="greeting-name"></span>, עוד צעד קטן ואנחנו בקשר</h1>
-      <p class="section-sub" style="margin: 12px auto 0;">
-        צפי בסרטון הקצר על הליווי, ואז השלימי כמה פרטים. נחזור אלייך תוך 24 שעות לתיאום שיחת האסטרטגיה.
-      </p>
-    </div>
-  </section>
+<!-- Hero -->
+<section class="pt-12 pb-8 px-4 text-center">
+  <div class="max-w-2xl mx-auto">
+    <span class="inline-block bg-[#b20052]/10 text-[#b20052] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">ההדרכה שלך מחכה</span>
+    <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4" style="letter-spacing: -0.02em;">
+      הי<span id="greeting-name" class="text-[#b20052]"></span>, הגעת למקום הנכון.<br>
+      צפי בהדרכה עכשיו 👇
+    </h1>
+    <p class="text-lg text-[#6a5a5f] leading-relaxed">
+      בפחות מ-20 דקות תבינی בדיוק מה גורם ללקוחות לאמר "אני צריכה לחשוב על זה" —<br class="hidden md:block">
+      ואיך לנטרל את זה כבר בתוכן שלך.
+    </p>
+  </div>
+</section>
 
-  <!-- ─── Video ─── -->
-  <section class="section section--white" style="padding-top: 40px;">
-    <div class="container">
-
-      <!-- ════ INSERT YOUTUBE LINK BELOW ════
-           Replace the src with your YouTube embed URL:
-           https://www.youtube.com/embed/YOUR_VIDEO_ID
-           ════════════════════════════════════ -->
-      <div class="video-wrapper">
-        <!-- YOUTUBE IFRAME PLACEHOLDER. Replace src when ready. -->
-        <!-- <iframe
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-          title="ליווי תוכן הדר סבג"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe> -->
-        <div class="video-placeholder">
-          <div class="play-icon">▶</div>
-          <p>סרטון YouTube יוצג כאן</p>
-          <p style="font-size:0.8rem;">הוסיפי את הקישור בקוד (שורה 51)</p>
-        </div>
+<!-- Video -->
+<section class="px-4 pb-12">
+  <div class="max-w-3xl mx-auto">
+    <div class="video-wrapper shadow-[0_16px_48px_rgba(178,0,82,0.12)]">
+      <!-- החליפי YOUR_VIDEO_ID במזהה הסרטון מיוטיוב -->
+      <!-- <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0"
+        title="הדרכה | נטרול התנגדויות בשיווק"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe> -->
+      <div class="video-placeholder">
+        <div class="play-icon">▶</div>
+        <p class="text-sm">הסרטון יופיע כאן</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── Key Takeaways ─── -->
-  <section class="section section--pink">
-    <div class="container text-center">
-      <span class="tag">איך נראה התהליך</span>
-      <h2>שלושה שלבים. 3 חודשים. אפס ניחושים.</h2>
-
-      <div class="takeaways__list">
-        <div class="takeaway">
-          <div class="takeaway__num">1</div>
-          <div class="takeaway__text">
-            <h3>פגישות אסטרטגיה ובניית מסרים</h3>
-            <p>נשב באישית בזום. ממפות את הלקוחות שלך, את ההתנגדויות שלהם, ואת המסרים שיגרמו להם לפנות. יוצאת עם 15 עד 20 קונספטים לרילסים וסקריפטים מוכנים.</p>
-          </div>
-        </div>
-        <div class="takeaway">
-          <div class="takeaway__num">2</div>
-          <div class="takeaway__text">
-            <h3>יום צילום מקצועי אצלך</h3>
-            <p>מגיעות עם ציוד, סטיילינג ומאפרת. את לא צריכה לדעת לעמוד מול מצלמה. אנחנו מובילות. ביום אחד מצלמות חודש שלם של תוכן.</p>
-          </div>
-        </div>
-        <div class="takeaway">
-          <div class="takeaway__num">3</div>
-          <div class="takeaway__text">
-            <h3>ליווי שוטף עד שזה ממיר</h3>
-            <p>פגישות זום חודשיות איתי לאורך כל הדרך. ניתוח של מה שעובד, חידוד מסרים, ובנייה של מסע תוכן שמחמם לידים עד שהם פונים אלייך מוכנים.</p>
-          </div>
-        </div>
+<!-- What you learned -->
+<section class="py-12 px-4 bg-white border-y border-[#e1bec4]/30">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#b20052] mb-6">מה למדת בהדרכה</span>
+    <div class="grid md:grid-cols-3 gap-6 text-right">
+      <div class="bg-[#f9f9f9] rounded-2xl p-6">
+        <div class="text-2xl mb-3">🎯</div>
+        <h3 class="font-bold text-base mb-2">למה "אני צריכה לחשוב" זה לא באמת "לא"</h3>
+        <p class="text-sm text-[#6a5a5f] leading-relaxed">ההתנגדות הזו היא סימן שהלקוח עדיין לא קיבל תשובה לשאלה שלא שאל בקול.</p>
+      </div>
+      <div class="bg-[#f9f9f9] rounded-2xl p-6">
+        <div class="text-2xl mb-3">🔑</div>
+        <h3 class="font-bold text-base mb-2">3 ההתנגדויות שחוזרות בכל עסק שירות</h3>
+        <p class="text-sm text-[#6a5a5f] leading-relaxed">מחיר, זמן, ובטחון. כל אחת נפרקת בתוכן אחר — ברגע שאת יודעת איך.</p>
+      </div>
+      <div class="bg-[#f9f9f9] rounded-2xl p-6">
+        <div class="text-2xl mb-3">✨</div>
+        <h3 class="font-bold text-base mb-2">איך לבנות תוכן שמחמם לידים לפני השיחה</h3>
+        <p class="text-sm text-[#6a5a5f] leading-relaxed">כשהתוכן עושה את העבודה מראש, הלקוח מגיע לשיחה כבר מוכן — ואת לא צריכה "למכור".</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── Offer CTA ─── -->
-  <section class="section section--white" id="offer">
-    <div class="container">
-      <div class="offer-cta">
-        <span class="tag tag--on-pink">הצעד הבא שלך</span>
-        <h2>בואי נראה אם זה מתאים לך</h2>
-        <p>
-          לפני שמתחילות ליווי, אני תמיד מקיימת שיחת אסטרטגיה של 30 דקות. בלי עלות. בלי שפיץ מכירה.<br /><br />
-          השיחה היא הדרך שלי להבין אם יש התאמה אמיתית, ושלך לראות בדיוק מה את מקבלת. גם אם לא נעבוד יחד, את יוצאת עם צעד מעשי.
+<!-- Transition divider -->
+<section class="py-14 px-4 text-center bg-[#f9f9f9]">
+  <div class="max-w-xl mx-auto">
+    <p class="text-2xl md:text-3xl font-bold text-[#1a1c1c] mb-3">אם מה שראית מהדהד אלייך —</p>
+    <p class="text-lg text-[#6a5a5f]">ואת רוצה להתחיל ליישם את זה בעסק שלך עם ליווי צמוד,<br>הצעד הבא הוא שיחת אסטרטגיה בחינם.</p>
+    <div class="w-12 h-1 bg-[#b20052] rounded-full mx-auto mt-8 opacity-40"></div>
+  </div>
+</section>
+
+<!-- Offer Section -->
+<section class="py-12 px-4" id="discovery-form-section">
+  <div class="max-w-2xl mx-auto">
+
+    <!-- Offer Card -->
+    <div class="glass-panel rounded-2xl p-8 md:p-10 border border-[#e1bec4]/40 shadow-[0_20px_48px_rgba(178,0,82,0.1)] mb-8">
+      <div class="text-center mb-8">
+        <span class="inline-block bg-[#b20052]/10 text-[#b20052] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">שיחת אסטרטגיה | חינם לגמרי</span>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">את רוצה להתקדם?<br>בואי נדבר.</h2>
+        <p class="text-[#6a5a5f] text-base leading-relaxed">
+          שיחה של 30 דקות איתי, בלי עלות ובלי מחויבות.<br>
+          תצאי ממנה עם אבחון ברור ועם לפחות צעד אחד שאת יכולה ליישם כבר הלילה.
         </p>
-        <ul class="offer-points">
-          <li>אבחון של ההתנגדות המרכזית שעוצרת את הלקוחות שלך.</li>
-          <li>הצגת תהליך הליווי וההשקעה.</li>
-          <li>צעד מעשי אחד שאת יכולה ליישם כבר השבוע.</li>
-          <li>שיחה חינמית. ללא התחייבות.</li>
-        </ul>
-        <a href="#discovery-form-section" class="btn btn--white btn--lg">להשלמת פרטים לשיחה</a>
       </div>
-    </div>
-  </section>
 
-  <!-- ─── Testimonials ─── -->
-  <section class="section section--pink">
-    <div class="container text-center">
-      <span class="tag">הן כבר עשו את הצעד</span>
-      <h2>בעלות עסק שהפסיקו לצלם לבד</h2>
+      <!-- Bullets -->
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
+          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span>אבחון של ההתנגדות הספציפית שעוצרת את הלקוחות <em>שלך</em></span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
+          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span>תראי בדיוק איך הליווי עובד ומה את מקבלת</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
+          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span>צעד מעשי אחד שאת יוצאת איתו הביתה — גם אם לא נעבוד יחד</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
+          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span>ללא שפיץ מכירה. ללא התחייבות.</span>
+        </li>
+      </ul>
 
-      <div class="testimonials__grid">
-        <div class="testimonial__card">
-          <p class="testimonial__quote">המקום הזה שמור לחוות דעת אמיתית מאחת הלקוחות שלי.</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">?</div>
-            <div>
-              <div class="testimonial__name">שם הלקוחה</div>
-              <div class="testimonial__role">תחום העסק</div>
-            </div>
-          </div>
-          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+      <!-- Form -->
+      <form id="discovery-form" novalidate class="space-y-4">
+
+        <div>
+          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-name">שם מלא</label>
+          <input
+            id="d-name" name="name" type="text" placeholder="השם שלך"
+            autocomplete="name"
+            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base"
+          >
+          <p class="form-error" id="d-name-error"></p>
         </div>
 
-        <div class="testimonial__card">
-          <p class="testimonial__quote">חוות דעת שנייה עם תוצאה ספציפית ומדידה.</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">?</div>
-            <div>
-              <div class="testimonial__name">שם הלקוחה</div>
-              <div class="testimonial__role">תחום העסק</div>
-            </div>
-          </div>
-          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+        <div>
+          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-email">אימייל</label>
+          <input
+            id="d-email" name="email" type="email" placeholder="your@email.com"
+            autocomplete="email"
+            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base ltr"
+          >
+          <p class="form-error" id="d-email-error"></p>
         </div>
 
-        <div class="testimonial__card">
-          <p class="testimonial__quote">חוות דעת שלישית, אם יש.</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">?</div>
-            <div>
-              <div class="testimonial__name">שם הלקוחה</div>
-              <div class="testimonial__role">תחום העסק</div>
-            </div>
-          </div>
-          <p class="testimonial__placeholder">[ להחליף בעדות אמיתית ]</p>
+        <div>
+          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-phone">טלפון</label>
+          <input
+            id="d-phone" name="phone" type="tel" placeholder="050-000-0000"
+            autocomplete="tel"
+            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base ltr"
+          >
+          <p class="form-error" id="d-phone-error"></p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ─── Discovery Form ─── -->
-  <section class="form-section" id="discovery-form-section">
-    <div class="container text-center">
-      <span class="tag tag--on-pink">שיחת אסטרטגיה 1:1 | 30 דקות</span>
-      <h2>השלימי פרטים. נחזור אלייך.</h2>
-      <p class="section-sub">כדי שהשיחה תהיה ממוקדת ושווה את הזמן שלך, ספרי לי קצת על העסק ועל מה שהכי מטריד אותך בתוכן עכשיו.</p>
-
-      <div class="form-box">
-        <form id="discovery-form" novalidate>
-          <div class="form-group">
-            <label for="d-name">שם מלא</label>
-            <input type="text" id="d-name" name="name" placeholder="השם שלך" autocomplete="name" required />
-            <p class="form-error"></p>
-          </div>
-
-          <div class="form-group">
-            <label for="d-email">אימייל</label>
-            <input type="email" id="d-email" name="email" placeholder="your@email.com" autocomplete="email" required />
-            <p class="form-error"></p>
-          </div>
-
-          <div class="form-group">
-            <label for="d-phone">טלפון</label>
-            <input type="tel" id="d-phone" name="phone" placeholder="050-0000000" autocomplete="tel" required />
-            <p class="form-error"></p>
-          </div>
-
-          <div class="form-group">
-            <label for="d-message">ספרי קצת על העסק והאתגר שלך</label>
-            <textarea id="d-message" name="message" placeholder="מה את עושה, מי הלקוחות שלך, ומה מעכב אותך בתוכן..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--full" style="margin-top: 8px;">
-            לקבוע את שיחת האסטרטגיה
-          </button>
-
-          <p class="form-fine-print">הפרטים שמורים אצלי בלבד. אחזור אלייך תוך 24 שעות.</p>
-        </form>
-
-        <div class="form-success" id="discovery-success">
-          <div class="form-success__icon">💌</div>
-          <h3>!קיבלתי. נחזור אלייך תוך 24 שעות</h3>
-          <p>תודה ששיתפת. נחזור אלייך לתיאום במייל או בוואטסאפ.</p>
+        <div>
+          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-message">ספרי קצת על העסק והאתגר שלך (לא חובה)</label>
+          <textarea
+            id="d-message" name="message"
+            placeholder="מה את עושה, מי הלקוחות שלך, ומה מעכב אותך בתוכן..."
+            rows="3"
+            class="w-full px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base resize-none"
+          ></textarea>
         </div>
+
+        <button
+          type="submit"
+          class="w-full py-4 rounded-full bg-[#b20052] text-white text-lg font-bold shadow-lg shadow-[#b20052]/20 hover:bg-[#d42a6a] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+        >
+          לקביעת שיחת האסטרטגיה בחינם
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+
+        <p class="text-xs text-center text-[#6a5a5f]/60 italic">הפרטים שמורים אצלי בלבד. אחזור אלייך תוך 24 שעות.</p>
+
+      </form>
+
+      <!-- Success -->
+      <div id="discovery-success" class="hidden text-center py-8">
+        <div class="text-5xl mb-4">💌</div>
+        <h3 class="text-xl font-bold text-[#1a1c1c] mb-2">קיבלתי! נחזור אלייך תוך 24 שעות.</h3>
+        <p class="text-[#6a5a5f]">נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים.</p>
       </div>
+
     </div>
-  </section>
 
-  <!-- ─── FAQ ─── -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 40px;">
-        <span class="tag">שאלות נפוצות</span>
-        <h2>מה קורה בשיחה החינמית?</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>מה קורה בשיחה? יש כאן מכירה?</summary>
-          <p>אין שפיץ מכירה. השיחה ממוקדת בעסק שלך. שואלת, מקשיבה, מזהה את ההתנגדות שעוצרת את הלקוחות שלך. את יוצאת עם צעד מעשי. ועם פירוט מלא על הליווי במידה ויש התאמה. אין התאמה? אגיד גם את זה בפשטות.</p>
-        </details>
-        <details>
-          <summary>כמה זמן השיחה?</summary>
-          <p>30 דקות. מספיק כדי להבין את המצב, להציג את התהליך, ולתת לך תשובה אמיתית.</p>
-        </details>
-        <details>
-          <summary>מה להכין לפני השיחה?</summary>
-          <p>כלום מיוחד. תפתחי את האינסטגרם והאתר שלך כדי שנוכל להסתכל יחד. תחשבי על שאלה אחת שמטרידה אותך הכי הרבה בתוכן עכשיו.</p>
-        </details>
-        <details>
-          <summary>מתי תחזרו אליי?</summary>
-          <p>תוך 24 שעות. נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים לשיחה.</p>
-        </details>
-      </div>
+    <!-- FAQ -->
+    <div class="space-y-3">
+      <p class="text-xs font-bold tracking-widest uppercase text-[#b20052] text-center mb-4">שאלות נפוצות</p>
+
+      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden group">
+        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
+          <span>מה קורה בשיחה? יש כאן מכירה?</span>
+          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
+        </summary>
+        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">אין שפיץ מכירה. השיחה ממוקדת בעסק שלך. אני שואלת, מקשיבה, ומזהה את ההתנגדות שעוצרת את הלקוחות שלך. את יוצאת עם צעד מעשי — גם אם לא נעבוד יחד.</p>
+      </details>
+
+      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
+          <span>כמה זמן השיחה?</span>
+          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
+        </summary>
+        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">30 דקות. מספיק כדי להבין את המצב, לתת אבחון, ולהציג את התהליך אם יש התאמה.</p>
+      </details>
+
+      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
+          <span>מתי תחזרי אליי?</span>
+          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
+        </summary>
+        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">תוך 24 שעות. נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים.</p>
+      </details>
     </div>
-  </section>
 
-  <!-- ─── Footer ─── -->
-  <footer class="footer">
-    <p>© 2025 הדר סבג · ליווי תוכן לבעלות עסקי שירות</p>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Footer -->
+<footer class="py-8 text-center text-xs text-[#6a5a5f]/50 border-t border-[#e1bec4]/30 mt-8">
+  כל הזכויות שמורות להדר סבג &copy; 2025
+</footer>
+
+<script>
+  // Read name from URL
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name');
+  if (name) {
+    const el = document.getElementById('greeting-name');
+    if (el) el.textContent = ' ' + decodeURIComponent(name);
+  }
+</script>
+<script src="script.js"></script>
 </body>
 </html>
