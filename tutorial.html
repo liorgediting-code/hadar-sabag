@@ -9,7 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Assistant', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+    body { font-family: 'Assistant', sans-serif; background-color: #ede8ec; color: #1a1c1c; }
+    .neon-accent {
+      text-shadow: 0 0 18px rgba(178,0,82,0.25);
+    }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
     .glass-panel {
       background: rgba(255, 255, 255, 0.88);
@@ -45,9 +48,9 @@
 <!-- Hero -->
 <section class="pt-12 pb-8 px-4 text-center">
   <div class="max-w-2xl mx-auto">
-    <span class="inline-block bg-[#b20052]/10 text-[#b20052] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">ההדרכה שלך מחכה</span>
+    <span class="inline-block bg-[#b20052]/10 text-[#b20052] neon-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">ההדרכה שלך מחכה</span>
     <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4" style="letter-spacing: -0.02em;">
-      הי<span id="greeting-name" class="text-[#b20052]"></span>, הגעת למקום הנכון.<br>
+      הי<span id="greeting-name" class="text-[#b20052] neon-accent"></span>, הגעת למקום הנכון.<br>
       צפי בהדרכה עכשיו 👇
     </h1>
     <p class="text-lg text-[#6a5a5f] leading-relaxed">

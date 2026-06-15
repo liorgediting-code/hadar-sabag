@@ -49,6 +49,14 @@
     .form-error { color: #E8397A; font-size: 12px; margin-top: 4px; min-height: 16px; display: none; }
     .form-error.visible { display: block; }
     .ltr { direction: ltr; text-align: right; }
+    .neon-pink {
+      color: #ff3fa4;
+      text-shadow: 0 0 22px rgba(255,63,164,0.30);
+    }
+    .neon-brand {
+      color: #ff3fa4;
+      opacity: 1 !important;
+    }
   </style>
 </head>
 <body class="overflow-x-hidden">
@@ -66,21 +74,24 @@
     <div class="organic-blob bg-[#6a5a5f] w-[400px] h-[400px] -bottom-20 -left-20"></div>
   </div>
 
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 z-[1] pointer-events-none bg-black/60"></div>
+
   <!-- Content -->
   <div class="relative z-10 w-full max-w-2xl flex flex-col items-center text-center">
 
     <!-- Brand -->
-    <p class="text-sm font-bold tracking-widest text-[#E8397A] uppercase mb-8 opacity-80">הדר סבג</p>
+    <p class="neon-brand text-sm font-bold tracking-widest uppercase mb-8">הדר סבג</p>
 
     <!-- Headline -->
-    <h1 class="text-[32px] md:text-[48px] font-extrabold leading-tight text-on-surface mb-5" style="letter-spacing: -0.02em;">
+    <h1 class="text-[32px] md:text-[48px] font-extrabold leading-tight text-white mb-5" style="letter-spacing: -0.02em;">
       תפסיקי לאבד לקוחות<br>
-      שכבר <span class="text-primary">רוצים לקנות</span>
+      שכבר <span class="neon-pink">רוצים לקנות</span>
     </h1>
 
     <!-- Subtitle -->
-    <p class="text-[18px] font-bold leading-relaxed text-secondary max-w-xl mb-10">
-      אחרי שעבדתי עם <strong class="text-on-surface">80+ בעלי עסקים</strong>, למדתי מה השיטה לגרום ללקוח להגיע לשיחה בלי התנגדויות, מוכן לקנות, על ידי <strong class="text-on-surface">נטרול ההתנגדויות כבר בשיווק</strong>.
+    <p class="text-[18px] font-bold leading-relaxed text-white/75 max-w-xl mb-10">
+      אחרי שעבדתי עם <strong class="text-white">מעל 200 בעלי עסקים</strong>, למדתי מה השיטה לגרום ללקוח להגיע לשיחה בלי התנגדויות, מוכן לקנות, על ידי <strong class="text-white">נטרול ההתנגדויות כבר בשיווק</strong>.
       <br><br>רוצה ללמוד איך? 👇
     </p>
 
@@ -145,8 +156,8 @@
     </div>
 
     <!-- Social proof line -->
-    <p class="mt-8 text-sm text-secondary/70">
-      80+ בעלי עסקים כבר נטרלו את ההתנגדויות בשיווק שלהם
+    <p class="mt-8 text-sm text-white/50">
+      מעל 200 בעלי עסקים כבר נטרלו את ההתנגדויות בשיווק שלהם
     </p>
 
   </div>
