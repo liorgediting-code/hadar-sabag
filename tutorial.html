@@ -51,7 +51,7 @@
     <span class="inline-block bg-[#b20052]/10 text-[#b20052] neon-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">ההדרכה שלך מחכה</span>
     <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4" style="letter-spacing: -0.02em;">
       הי<span id="greeting-name" class="text-[#b20052] neon-accent"></span>, הגעת למקום הנכון.<br>
-      צפי בהדרכה עכשיו 👇
+      צפי בהדרכה עכשיו <span class="material-symbols-outlined" style="font-size:1em;vertical-align:middle;">arrow_downward</span>
     </h1>
     <p class="text-lg text-[#6a5a5f] leading-relaxed">
       בפחות מ-20 דקות תביני בדיוק מה גורם ללקוחות לאמר "אני צריכה לחשוב על זה"<br class="hidden md:block">
@@ -85,17 +85,17 @@
     <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#b20052] mb-6">מה למדת בהדרכה</span>
     <div class="grid md:grid-cols-3 gap-6 text-right">
       <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3">🎯</div>
+        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">track_changes</span></div>
         <h3 class="font-bold text-base mb-2">למה "אני צריכה לחשוב" זה לא באמת "לא"</h3>
         <p class="text-sm text-[#6a5a5f] leading-relaxed">ההתנגדות הזו היא סימן שהלקוח עדיין לא קיבל תשובה לשאלה שלא שאל בקול.</p>
       </div>
       <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3">🔑</div>
+        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">key</span></div>
         <h3 class="font-bold text-base mb-2">3 ההתנגדויות שחוזרות בכל עסק שירות</h3>
-        <p class="text-sm text-[#6a5a5f] leading-relaxed">מחיר, זמן, ובטחון. כל אחת נפרקת בתוכן אחר, ברגע שאת יודעת איך.</p>
+        <p class="text-sm text-[#6a5a5f] leading-relaxed">התנגדות על התחום שלך, עלייך, ועל הלקוח עצמו. כל אחת נפרקת בתוכן אחר, ברגע שאת יודעת איך.</p>
       </div>
       <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3">✨</div>
+        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">auto_awesome</span></div>
         <h3 class="font-bold text-base mb-2">איך לבנות תוכן שמחמם לידים לפני השיחה</h3>
         <p class="text-sm text-[#6a5a5f] leading-relaxed">כשהתוכן עושה את העבודה מראש, הלקוח מגיע לשיחה כבר מוכן ואת לא צריכה "למכור".</p>
       </div>
@@ -130,19 +130,19 @@
       <!-- Bullets -->
       <ul class="space-y-3 mb-8">
         <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
           <span>אבחון של ההתנגדות הספציפית שעוצרת את הלקוחות <em>שלך</em></span>
         </li>
         <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
           <span>תראי בדיוק איך הליווי עובד ומה את מקבלת</span>
         </li>
         <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
           <span>אסטרטגיה שיווקית לעסק שלך שאת יוצאת איתה הביתה, גם אם לא נמשיך יחד</span>
         </li>
         <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="text-[#b20052] font-bold mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
           <span>פגישת עבודה אמיתית, לא שיחת מכירה. ללא התחייבות.</span>
         </li>
       </ul>
@@ -181,13 +181,13 @@
         </div>
 
         <div>
-          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-message">ספרי קצת על העסק והאתגר שלך (לא חובה)</label>
-          <textarea
-            id="d-message" name="message"
-            placeholder="מה את עושה, מי הלקוחות שלך, ומה מעכב אותך בתוכן..."
-            rows="3"
-            class="w-full px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base resize-none"
-          ></textarea>
+          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-business-domain">תחום העסק שלך</label>
+          <input
+            type="text"
+            id="d-business-domain" name="business_domain"
+            placeholder="למשל: קואצ'ינג, טיפול, ייעוץ..."
+            class="w-full px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base"
+          />
         </div>
 
         <button
@@ -204,7 +204,7 @@
 
       <!-- Success -->
       <div id="discovery-success" class="hidden text-center py-8">
-        <div class="text-5xl mb-4">💌</div>
+        <div class="text-5xl mb-4"><span class="material-symbols-outlined" style="font-size:1em;color:#b20052;">mark_email_read</span></div>
         <h3 class="text-xl font-bold text-[#1a1c1c] mb-2">קיבלתי! נחזור אלייך תוך 24 שעות.</h3>
         <p class="text-[#6a5a5f]">נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים.</p>
       </div>

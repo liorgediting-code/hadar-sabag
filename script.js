@@ -1,5 +1,6 @@
 // ─── Config ───────────────────────────────────────────────────────────────────
-const WEBHOOK_URL = "REPLACE_ME"; // ← paste your webhook URL here
+const WEBHOOK_URL = "https://hook.eu1.make.com/p7sgb3owq4exwufn63hjavh0r4ujuatj";
+const DISCOVERY_WEBHOOK_URL = "https://hook.eu1.make.com/rmfykk8olkq5trl2emqsrms9i3d2etwd";
 
 // ─── Opt-in Form (Page 1) ─────────────────────────────────────────────────────
 const leadForm = document.getElementById("lead-form");
@@ -34,7 +35,7 @@ if (discoveryForm) {
     const name    = discoveryForm.querySelector('[name="name"]').value.trim();
     const email   = discoveryForm.querySelector('[name="email"]').value.trim();
     const phone   = discoveryForm.querySelector('[name="phone"]').value.trim();
-    const message = discoveryForm.querySelector('[name="message"]').value.trim();
+    const business_domain = discoveryForm.querySelector('[name="business_domain"]').value.trim();
 
     if (!name)  { showError(discoveryForm, "name",  "נא להזין שם"); return; }
     if (!email) { showError(discoveryForm, "email", "נא להזין כתובת אימייל"); return; }
@@ -43,7 +44,7 @@ if (discoveryForm) {
 
     setLoading(discoveryForm, true);
 
-    postToWebhook({ type: "discovery_call", name, email, phone, message, source: "tutorial_page" }).catch(() => {});
+    fetch(DISCOVERY_WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "discovery_call", name, email, phone, business_domain, source: "tutorial_page" }) }).catch(() => {});
     discoveryForm.style.display = "none";
     document.getElementById("discovery-success").classList.add("visible");
   });
