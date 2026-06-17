@@ -210,23 +210,6 @@ select.field { appearance: none; cursor: pointer; }
 .btn-primary:disabled { opacity: .7; cursor: default; transform: none; }
 .btn-primary .material-symbols-outlined { font-size: 1.3em; }
 
-/* ---- Handwritten accent (rotated note by the form) ------------------- */
-.handnote {
-  font-family: 'Gveret Levin AlefAlefAlef', 'Assistant', cursive;
-  font-weight: 700;
-  color: var(--pink);
-  line-height: 1.2;
-  -webkit-text-stroke: 0.7px var(--pink);     /* fake-bold the single-weight script face */
-  padding: 12px 18px;
-  border-radius: 16px;
-  background: oklch(0.16 0.05 285 / 0.72);     /* dark backing so it reads over the card */
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  border: 1px solid oklch(0.68 0.20 350 / 0.5);
-  box-shadow: 0 0 26px var(--glow), 0 10px 28px oklch(0.08 0.04 285 / 0.6);
-  text-shadow: 0 0 16px var(--glow), 0 2px 8px oklch(0.10 0.04 285 / 0.85);
-}
-
 /* ---- Video ----------------------------------------------------------- */
 .video-frame {
   position: relative;
