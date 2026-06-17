@@ -9,41 +9,43 @@ Static 2-page Hebrew lead magnet funnel for Hadar Cohen, a marketing coach targe
 ## Architecture
 
 ```
-index.html      ← Page 1: opt-in / lead capture
-tutorial.html   ← Page 2: video + discovery-call offer
-style.css       ← Shared styles (pink & white, RTL)
+index.html      ← Page 1: opt-in squeeze page (training pitch + lead capture)
+tutorial.html   ← Page 2: video + breakthrough-call (פגישת פיצוח) offer
+style.css       ← Shared design system (dark navy + neon pink, RTL)
 script.js       ← Form logic: validate → webhook → redirect/success
 ```
 
-**Funnel flow:** Visitor fills form on `index.html` → webhook fires (fire-and-forget) → redirect to `tutorial.html?name=ENCODED_NAME` → watches video → fills discovery-call form.
+**Visual design:** Dark navy background with neon-pink accents, glowing form cards, and outline Material-Symbols icons — matched to a client-supplied reference image. Both pages share `style.css` (linked from each) and layer Tailwind CDN utilities on top for layout.
+
+**Funnel flow:** Visitor fills opt-in form on `index.html` (name + phone) → webhook fires (fire-and-forget) → redirect to `tutorial.html?name=ENCODED_NAME` → watches the training video → fills the breakthrough-call form.
 
 ## Key Implementation Details
 
-**Language & direction:** All copy is Hebrew, `dir="rtl"` on `<html>`. Font is Heebo from Google Fonts.
+**Language & direction:** All copy is Hebrew, `dir="rtl"` on `<html>`. Fonts: **Rubik** (display/headings) + **Assistant** (body) + **Gveret Levin AlefAlefAlef** (the rotated handwritten accent), all from Google Fonts.
 
-**Webhook:** `const WEBHOOK_URL = "REPLACE_ME"` at top of `script.js`. Both forms POST JSON but don't block on the response — redirect/success happens regardless of webhook result.
+**Webhooks:** `WEBHOOK_URL` (lead) and `DISCOVERY_WEBHOOK_URL` (breakthrough call) at top of `script.js`. Both forms POST JSON fire-and-forget — redirect/success happens regardless of the webhook result.
 
 **Form payloads:**
-- Page 1 (lead): `{ type: "lead", name, email, phone, source: "landing_page" }`
-- Page 2 (discovery): `{ type: "discovery_call", name, email, phone, message, source: "tutorial_page" }`
+- Page 1 (lead): `{ type: "lead", name, phone, source: "landing_page" }` — email is **not** collected (matches the reference's two-field form).
+- Page 2 (discovery): `{ type: "discovery_call", name, email, phone, business_domain, clients_to_add, pricing, main_challenge, source: "tutorial_page" }`
 
 **Name personalization:** Page 2 reads `?name=` from the URL and injects it into `<span id="greeting-name">`.
 
-**YouTube video:** In `tutorial.html` around line 50, the `<iframe>` is commented out. Uncomment and replace `YOUR_VIDEO_ID` with the real ID to activate.
+**YouTube video:** Active in `tutorial.html` — `<iframe>` embeds `https://www.youtube.com/embed/4c5BlCtuzRg`. Swap the ID to change the video.
 
-**Image placeholders:** `<div class="img-placeholder">` blocks throughout — replace with `<img>` tags when photos are available.
+**Testimonials:** The three cards on `index.html` are placeholders marked `[ להחליף בעדות אמיתית ]`.
 
-**Testimonials:** All testimonial cards are placeholders marked with `[ להחליף בעדות אמיתית ]`.
+## Design Tokens (style.css, OKLCH)
 
-## Design Tokens (style.css)
-
-| Variable | Value |
-|----------|-------|
-| `--pink` | `#E91E8C` |
-| `--pink-light` | `#FCE4F3` |
-| `--text` | `#1A1A2E` |
-| `--radius` | `14px` |
-| `--max-w` | `1100px` |
+| Variable | Role | Value |
+|----------|------|-------|
+| `--bg-0` | page base (deep navy) | `oklch(0.17 0.045 285)` |
+| `--surface` | cards | `oklch(0.23 0.045 287)` |
+| `--pink` | neon accent / icons | `oklch(0.68 0.27 0)` |
+| `--pink-deep` | CTA gradient end | `oklch(0.58 0.24 1)` |
+| `--ink` | near-white text | `oklch(0.97 0.008 300)` |
+| `--radius` | card radius | `18px` |
+| `--max-w` | content column | `720px` |
 
 ## Copy Guidelines
 

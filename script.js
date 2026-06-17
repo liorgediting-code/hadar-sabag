@@ -2,9 +2,8 @@
 const WEBHOOK_URL = "https://hook.eu1.make.com/p7sgb3owq4exwufn63hjavh0r4ujuatj";
 const DISCOVERY_WEBHOOK_URL = "https://hook.eu1.make.com/rmfykk8olkq5trl2emqsrms9i3d2etwd";
 
-// ─── Opt-in Form (Page 1) ─────────────────────────────────────────────────────
-const leadForm = document.getElementById("lead-form");
-if (leadForm) {
+// ─── Opt-in Forms (Page 1 — top + bottom share class .lead-form) ──────────────
+document.querySelectorAll(".lead-form").forEach((leadForm) => {
   leadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     clearErrors(leadForm);
@@ -23,7 +22,7 @@ if (leadForm) {
     postToWebhook({ type: "lead", name, email, phone, source: "landing_page" }).catch(() => {});
     window.location.href = "tutorial.html?name=" + encodeURIComponent(name);
   });
-}
+});
 
 // ─── Discovery Form (Page 2) ──────────────────────────────────────────────────
 const discoveryForm = document.getElementById("discovery-form");
@@ -32,21 +31,33 @@ if (discoveryForm) {
     e.preventDefault();
     clearErrors(discoveryForm);
 
-    const name    = discoveryForm.querySelector('[name="name"]').value.trim();
-    const email   = discoveryForm.querySelector('[name="email"]').value.trim();
-    const phone   = discoveryForm.querySelector('[name="phone"]').value.trim();
-    const business_domain = discoveryForm.querySelector('[name="business_domain"]').value.trim();
+    const val = (n) => { const el = discoveryForm.querySelector(`[name="${n}"]`); return el ? el.value.trim() : ""; };
+    const name            = val("name");
+    const email           = val("email");
+    const phone           = val("phone");
+    const business_domain = val("business_domain");
+    const clients_to_add  = val("clients_to_add");
+    const pricing         = val("pricing");
+    const main_challenge  = val("main_challenge");
 
     if (!name)  { showError(discoveryForm, "name",  "נא להזין שם"); return; }
     if (!email) { showError(discoveryForm, "email", "נא להזין כתובת אימייל"); return; }
     if (!isValidEmail(email)) { showError(discoveryForm, "email", "כתובת האימייל אינה תקינה"); return; }
-    if (!phone) { showError(discoveryForm, "phone", "נא להזין מספר טלפון"); return; }
+    if (!phone) { showError(discoveryForm, "phone", "נא להזין מספר וואטסאפ"); return; }
 
     setLoading(discoveryForm, true);
 
-    fetch(DISCOVERY_WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "discovery_call", name, email, phone, business_domain, source: "tutorial_page" }) }).catch(() => {});
+    fetch(DISCOVERY_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "discovery_call", name, email, phone,
+        business_domain, clients_to_add, pricing, main_challenge,
+        source: "tutorial_page"
+      })
+    }).catch(() => {});
     discoveryForm.style.display = "none";
-    document.getElementById("discovery-success").classList.add("visible");
+    document.getElementById("discovery-success").style.display = "block";
   });
 }
 
@@ -81,7 +92,8 @@ function setLoading(form, loading) {
 function showError(form, fieldName, msg) {
   const input = form.querySelector(`[name="${fieldName}"]`);
   if (!input) return;
-  const errEl = input.parentElement.querySelector(".form-error");
+  const group = input.closest(".field-group") || input.parentElement;
+  const errEl = group.querySelector(".form-error");
   if (errEl) { errEl.textContent = msg; errEl.classList.add("visible"); }
 }
 
