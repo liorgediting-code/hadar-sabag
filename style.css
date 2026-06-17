@@ -145,6 +145,20 @@ h1, h2, h3, .display {
   text-shadow: 0 0 18px var(--glow);
 }
 
+/* WhatsApp screenshot testimonials — masonry so varied heights pack neatly */
+.shots { columns: 1; column-gap: 18px; }
+@media (min-width: 620px) { .shots { columns: 2; } }
+.shot {
+  break-inside: avoid;
+  margin: 0 0 18px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid oklch(0.68 0.20 350 / 0.4);
+  box-shadow: 0 0 26px -6px var(--glow), 0 18px 40px -24px oklch(0.08 0.04 285 / 0.9);
+}
+.shot img { display: block; width: 100%; height: auto; }
+
 /* ---- Forms ----------------------------------------------------------- */
 .field {
   width: 100%;
