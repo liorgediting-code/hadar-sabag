@@ -2,25 +2,27 @@
 const WEBHOOK_URL = "https://hook.eu1.make.com/p7sgb3owq4exwufn63hjavh0r4ujuatj";
 const DISCOVERY_WEBHOOK_URL = "https://hook.eu1.make.com/rmfykk8olkq5trl2emqsrms9i3d2etwd";
 
-// ─── Opt-in Form (Page 1) ─────────────────────────────────────────────────────
-const leadForm = document.getElementById("lead-form");
-if (leadForm) {
+// ─── Opt-in Forms (Page 1 — top + bottom share class .lead-form) ──────────────
+document.querySelectorAll(".lead-form").forEach((leadForm) => {
   leadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     clearErrors(leadForm);
 
     const name  = leadForm.querySelector('[name="name"]').value.trim();
+    const email = leadForm.querySelector('[name="email"]').value.trim();
     const phone = leadForm.querySelector('[name="phone"]').value.trim();
 
     if (!name)  { showError(leadForm, "name",  "נא להזין שם"); return; }
+    if (!email) { showError(leadForm, "email", "נא להזין כתובת אימייל"); return; }
+    if (!isValidEmail(email)) { showError(leadForm, "email", "כתובת האימייל אינה תקינה"); return; }
     if (!phone) { showError(leadForm, "phone", "נא להזין מספר טלפון"); return; }
 
     setLoading(leadForm, true);
 
-    postToWebhook({ type: "lead", name, phone, source: "landing_page" }).catch(() => {});
+    postToWebhook({ type: "lead", name, email, phone, source: "landing_page" }).catch(() => {});
     window.location.href = "tutorial.html?name=" + encodeURIComponent(name);
   });
-}
+});
 
 // ─── Discovery Form (Page 2) ──────────────────────────────────────────────────
 const discoveryForm = document.getElementById("discovery-form");
@@ -90,7 +92,8 @@ function setLoading(form, loading) {
 function showError(form, fieldName, msg) {
   const input = form.querySelector(`[name="${fieldName}"]`);
   if (!input) return;
-  const errEl = input.parentElement.querySelector(".form-error");
+  const group = input.closest(".field-group") || input.parentElement;
+  const errEl = group.querySelector(".form-error");
   if (errEl) { errEl.textContent = msg; errEl.classList.add("visible"); }
 }
 
