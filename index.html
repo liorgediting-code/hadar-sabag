@@ -7,7 +7,7 @@
   <meta name="description" content="הדרכה חינמית: איך ליצור תוכן שמנטרל את ההתנגדויות הנפוצות עוד לפני שיחת המכירה — כדי שהלקוחות יגיעו בשלים לקנות." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Assistant:wght@400;500;600;700;800&family=Gveret+Levin+AlefAlefAlef&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <style>
@@ -21,16 +21,6 @@
       .grid-4 > .cell { padding-inline: 22px; }
       .grid-4 > .cell + .cell { border-inline-start: 1px solid var(--hairline); }
       .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    }
-    /* rotated handwritten note: only where there's room beside the card */
-    .handnote-float { display: none; }
-    @media (min-width: 760px) {
-      .handnote-float {
-        display: block; position: absolute;
-        inset-inline-end: 24px; top: 22px; transform: rotate(-8deg);
-        font-size: clamp(1.4rem, 2.2vw, 1.85rem); max-width: 6ch; text-align: center;
-        z-index: 2; pointer-events: none;
-      }
     }
   </style>
 </head>
@@ -257,11 +247,6 @@
 
   <!-- Opt-in form -->
   <section id="lead" style="margin-top: 64px; position: relative;">
-
-    <!-- rotated handwritten accent (desktop only — no room beside the card on mobile) -->
-    <div class="handnote handnote-float" aria-hidden="true">
-      מוכנה להפוך פניות ללקוחות משלמים?
-    </div>
 
     <div class="panel panel--glow" style="padding: clamp(30px, 6vw, 52px);">
       <div style="text-align:center; margin-bottom: 26px;">
