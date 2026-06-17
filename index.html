@@ -3,166 +3,276 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>הדר סבג | הדרכה חינמית לנטרול התנגדויות</title>
-  <meta name="description" content="הדרכה חינמית: 3 ההתנגדויות שהורסות לך מכירות ואיך לנטרל אותן בתוכן — עוד לפני שהלקוחה הגיעה לשיחה." />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap" rel="stylesheet">
+  <title>הדר סבג | ההדרכה: הסיבה האמיתית שלקוחות לא קונים</title>
+  <meta name="description" content="הדרכה חינמית: איך ליצור תוכן שמנטרל את ההתנגדויות הנפוצות עוד לפני שיחת המכירה — כדי שהלקוחות יגיעו בשלים לקנות." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Assistant:wght@400;500;600;700;800&family=Gveret+Levin+AlefAlefAlef&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <script id="tailwind-config">
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#E8397A",
-            "primary-container": "#F04E8C",
-            "on-primary": "#ffffff",
-            "secondary": "#6a5a5f",
-            "on-surface": "#1a1c1c",
-            "on-surface-variant": "#594045",
-            "outline-variant": "#e1bec4",
-            "surface": "#f9f9f9",
-            "background": "#f9f9f9"
-          },
-          fontFamily: {
-            "sans": ["Assistant", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
+  <link href="style.css" rel="stylesheet">
   <style>
-    body { font-family: 'Assistant', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .wrap { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: 20px; position: relative; z-index: 1; }
+    .hero-h1 { font-size: clamp(1.9rem, 6.2vw, 3.1rem); }
+    .grid-4 { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 720px) {
+      .grid-4 { grid-template-columns: repeat(4, 1fr); gap: 0; }
+      .grid-4 > .cell { padding-inline: 22px; }
+      .grid-4 > .cell + .cell { border-inline-start: 1px solid var(--hairline); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
-    .organic-blob {
-      position: absolute;
-      z-index: 0;
-      filter: blur(70px);
-      opacity: 0.18;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .form-error { color: #E8397A; font-size: 12px; margin-top: 4px; min-height: 16px; display: none; }
-    .form-error.visible { display: block; }
-    .ltr { direction: ltr; text-align: right; }
-    .neon-pink {
-      color: #ff3fa4;
-      text-shadow: 0 0 22px rgba(255,63,164,0.30);
-    }
-    .neon-brand {
-      color: #ff3fa4;
-      opacity: 1 !important;
+    /* rotated handwritten note: only where there's room beside the card */
+    .handnote-float { display: none; }
+    @media (min-width: 760px) {
+      .handnote-float {
+        display: block; position: absolute;
+        inset-inline-end: 24px; top: 22px; transform: rotate(-8deg);
+        font-size: clamp(1.4rem, 2.2vw, 1.85rem); max-width: 6ch; text-align: center;
+        z-index: 2; pointer-events: none;
+      }
     }
   </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-<main class="relative min-h-screen flex flex-col items-center justify-center py-16 px-4 overflow-hidden">
+<main class="wrap" style="padding-top: clamp(40px, 8vw, 80px); padding-bottom: 64px;">
 
-  <!-- Background -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <img
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover"
-      src="https://lh3.googleusercontent.com/aida/AP1WRLsULMeMi8wMW7ruFWUVfTvNm7mtm3_Ym3w6ZP0y71iUjcyJK81mWKeex9GbJin7GNmT3TXGWsgbFht80gHvEc_Mk9izJOYZQBvJYxIdRaEQ4BPMDp8NfKWlFLwWAFweXRxCP3jsAH7dCA9WzZR3TuBLcqFfA1iZGDi70dIZzNVaSaO0IXzKJeAN8bf1TZq6zw_9FWSD_PXytT0SUK5oF4Wggy-G5TqEl4l8qrgQn-kD5Ue2lmOsCBfvyPw"
-    >
-    <div class="organic-blob bg-[#E8397A] w-[500px] h-[500px] -top-20 -right-20"></div>
-    <div class="organic-blob bg-[#6a5a5f] w-[400px] h-[400px] -bottom-20 -left-20"></div>
+  <!-- Badge -->
+  <div class="rise" style="text-align:center; margin-bottom: 26px;">
+    <span class="badge">
+      <span class="material-symbols-outlined">auto_awesome</span>
+      הדרכה ייעודית לבעלות עסקי ליווי
+    </span>
   </div>
 
-  <!-- Dark overlay -->
-  <div class="absolute inset-0 z-[1] pointer-events-none bg-black/60"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 w-full max-w-2xl flex flex-col items-center text-center">
-
-    <!-- Brand -->
-    <p class="neon-brand text-sm font-bold tracking-widest uppercase mb-8">הדר סבג</p>
-
-    <!-- Headline -->
-    <h1 class="text-[32px] md:text-[48px] font-extrabold leading-tight text-white mb-5" style="letter-spacing: -0.02em;">
-      תפסיקי לאבד לקוחות<br>
-      שכבר <span class="neon-pink">רוצים לקנות</span>
+  <!-- Hero headline (user's title, image's stacked treatment) -->
+  <header class="rise d1" style="text-align:center; max-width: 640px; margin-inline:auto;">
+    <h1 class="hero-h1" style="color: var(--ink);">
+      הסיבה האמיתית שלקוחות <span class="neon">לא קונים ממך</span> ואיך לשנות את זה
     </h1>
+    <div style="width:120px; height:4px; border-radius:999px; margin: 22px auto 0;
+                background: linear-gradient(90deg, transparent, var(--pink), transparent);
+                box-shadow: 0 0 18px var(--glow);"></div>
+  </header>
 
-    <!-- Subtitle -->
-    <p class="text-[18px] font-bold leading-relaxed text-white/75 max-w-xl mb-10">
-      אחרי שעבדתי עם <strong class="text-white">מעל 200 בעלי עסקים</strong>, למדתי מה השיטה לגרום ללקוח להגיע לשיחה בלי התנגדויות, מוכן לקנות, על ידי <strong class="text-white">נטרול ההתנגדויות כבר בשיווק</strong>.
-      <br><br>רוצה ללמוד איך? <span class="material-symbols-outlined" style="font-size:1.3em;vertical-align:middle;">arrow_downward</span>
-    </p>
+  <!-- Sub -->
+  <p class="rise d2 measure" style="text-align:center; font-size: clamp(1.02rem, 3.4vw, 1.18rem);
+        color: var(--ink-dim); line-height: 1.7; margin: 26px auto 0;">
+    בהדרכה הזו אני אלמד אותך איך ליצור תוכן שמנטרל את ההתנגדויות הנפוצות
+    עוד לפני שיחת המכירה — כשהלקוח כבר מבין את הערך שלך ובשל לקנות.
+  </p>
 
-    <!-- Form Card -->
-    <div class="w-full glass-panel p-8 md:p-10 rounded-2xl shadow-[0_20px_48px_rgba(178,0,82,0.13)] border border-[#e1bec4]/40">
+  <!-- 3 benefits row -->
+  <div class="rise d3" style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+        gap: 14px 22px; margin-top: 38px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="material-symbols-outlined ficon ficon--sm">groups</span>
+      <span style="font-weight:700;">יותר לקוחות משלמים</span>
+    </div>
+    <span class="vrule" style="height:26px;"></span>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="material-symbols-outlined ficon ficon--sm">target</span>
+      <span style="font-weight:700;">פחות התנגדויות</span>
+    </div>
+    <span class="vrule" style="height:26px;"></span>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="material-symbols-outlined ficon ficon--sm">forum</span>
+      <span style="font-weight:700;">פניות איכותיות יותר</span>
+    </div>
+  </div>
 
-      <form id="lead-form" class="space-y-5 flex flex-col items-center" novalidate>
-
-        <div class="w-full text-right space-y-4">
-
-          <div class="space-y-1">
-            <label class="block text-sm font-semibold text-secondary" for="name">שם מלא</label>
-            <input
-              id="name" name="name" type="text" placeholder="הכניסי את שמך המלא"
-              autocomplete="name"
-              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans"
-            >
-            <p class="form-error" id="name-error"></p>
-          </div>
-
-          <div class="space-y-1">
-            <label class="block text-sm font-semibold text-secondary" for="email">אימייל</label>
-            <input
-              id="email" name="email" type="email" placeholder="example@email.com"
-              autocomplete="email"
-              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans ltr"
-            >
-            <p class="form-error" id="email-error"></p>
-          </div>
-
-          <div class="space-y-1">
-            <label class="block text-sm font-semibold text-secondary" for="phone">טלפון</label>
-            <input
-              id="phone" name="phone" type="tel" placeholder="050-000-0000"
-              autocomplete="tel"
-              class="w-full h-14 px-4 rounded-xl border border-[#e1bec4] bg-white/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base font-sans ltr"
-            >
-            <p class="form-error" id="phone-error"></p>
-          </div>
-
-        </div>
-
-        <button
-          type="submit"
-          class="w-full h-16 mt-2 rounded-full bg-primary text-white text-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary-container hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
-        >
-          אני רוצה גישה להדרכה בחינם
-          <span class="material-symbols-outlined">arrow_back</span>
-        </button>
-
-        <p class="text-xs text-secondary/60 italic">* ההדרכה תישלח ישירות למייל שהזנת, ללא עלות.</p>
-
-      </form>
-
-      <!-- Success State -->
-      <div id="lead-success" class="hidden text-center py-6">
-        <div class="text-5xl mb-4"><span class="material-symbols-outlined" style="font-size:1em;color:#b20052;">check_circle</span></div>
-        <h3 class="text-2xl font-bold text-on-surface mb-2">נשלח! מיד מעבירה אותך.</h3>
-        <p class="text-secondary">ההדרכה בדרך אלייך.</p>
+  <!-- What you'll learn -->
+  <section class="panel" style="margin-top: 48px; padding: clamp(28px, 5vw, 44px);">
+    <h2 style="text-align:center; font-size: clamp(1.5rem, 4.6vw, 2rem); margin-bottom: 36px;">
+      מה תלמדי בהדרכה?
+    </h2>
+    <div class="grid-4">
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">psychology</span>
+        <p style="margin: 16px 0 0; color: var(--ink-dim); line-height:1.6;">
+          למה המתעניינים נשארים על הגדר ולא קונים
+        </p>
       </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">visibility</span>
+        <p style="margin: 16px 0 0; color: var(--ink-dim); line-height:1.6;">
+          אילו אמירות ותכנים מייצרים התנגדות בלי ששמת לב
+        </p>
+      </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">edit_document</span>
+        <p style="margin: 16px 0 0; color: var(--ink-dim); line-height:1.6;">
+          איך ליצור תוכן שמנטרל התנגדויות עוד לפני שיחת המכירה
+        </p>
+      </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">workspace_premium</span>
+        <p style="margin: 16px 0 0; color: var(--ink-dim); line-height:1.6;">
+          איך לגרום ללקוח להבין את הערך שלך ולהגיע בשל יותר להחלטה
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Checklist -->
+  <section style="margin-top: 52px; max-width: 600px; margin-inline:auto;">
+    <h2 style="text-align:center; font-size: clamp(1.4rem, 4.4vw, 1.9rem); margin-bottom: 28px;">
+      בהדרכה תלמדי:
+    </h2>
+    <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:18px;">
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.55;">למה אנשים אומרים "אני צריך לחשוב על זה" גם כשהם צריכים בדיוק את מה שאת מציעה</span>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.55;">איך לזהות את ההתנגדויות האמיתיות שמונעות מהם לקנות</span>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.55;">איזה תוכן צריך להיות בעמוד כדי לנטרל את ההתנגדויות עוד לפני שיחת המכירה</span>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.55;">איך לעזור ללקוח להגיע בשל יותר להחלטה — ולסגור בלי לחץ</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- What you'll get -->
+  <section style="margin-top: 56px;">
+    <h2 style="text-align:center; font-size: clamp(1.4rem, 4.4vw, 1.9rem); margin-bottom: 34px;">
+      מה תקבלי בהדרכה?
+    </h2>
+    <div class="grid-4">
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">lightbulb</span>
+        <p style="margin: 14px 0 0; color: var(--ink-dim); line-height:1.6;">
+          כלים שיעזרו לך להפוך צפיות ופניות ללקוחות
+        </p>
+      </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">all_inclusive</span>
+        <p style="margin: 14px 0 0; color: var(--ink-dim); line-height:1.6;">
+          מסר מדויק שמושך אליך את הלקוחות הנכונים
+        </p>
+      </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">checklist</span>
+        <p style="margin: 14px 0 0; color: var(--ink-dim); line-height:1.6;">
+          שלבים פרקטיים ליישום מיידי בעסק שלך
+        </p>
+      </div>
+      <div class="cell" style="text-align:center;">
+        <span class="material-symbols-outlined ficon">rocket_launch</span>
+        <p style="margin: 14px 0 0; color: var(--ink-dim); line-height:1.6;">
+          דוגמאות לתוכן שעובד ומביא לקוחות איכותיים
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="margin-top: 60px;">
+    <h2 style="text-align:center; font-size: clamp(1.4rem, 4.4vw, 1.9rem); margin-bottom: 30px;
+               display:flex; align-items:center; justify-content:center; gap:10px;">
+      <span class="material-symbols-outlined ficon ficon--sm">favorite</span>
+      מה אומרות משתתפות?
+    </h2>
+    <div class="grid-3">
+      <figure class="quote-card" style="margin:0; padding: 26px 24px;">
+        <div class="quote-mark">&rdquo;</div>
+        <blockquote style="margin: 6px 0 0; line-height:1.6; color: var(--ink);">
+          [ להחליף בעדות אמיתית ] בדיוק מה שהייתי צריכה. הכל ברור, פרקטי ומדבר תכל'ס.
+        </blockquote>
+      </figure>
+      <figure class="quote-card" style="margin:0; padding: 26px 24px;">
+        <div class="quote-mark">&rdquo;</div>
+        <blockquote style="margin: 6px 0 0; line-height:1.6; color: var(--ink);">
+          [ להחליף בעדות אמיתית ] ההדרכה עזרה לי בכמות! כבר יש לי תבנית לתוכן שמשמש את הלקוחות שלי.
+        </blockquote>
+      </figure>
+      <figure class="quote-card" style="margin:0; padding: 26px 24px;">
+        <div class="quote-mark">&rdquo;</div>
+        <blockquote style="margin: 6px 0 0; line-height:1.6; color: var(--ink);">
+          [ להחליף בעדות אמיתית ] פשוט פתחת לי את העיניים. הבנתי סוף סוף למה אנשים לא סגרו איתי.
+        </blockquote>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Opt-in form -->
+  <section id="lead" style="margin-top: 64px; position: relative;">
+
+    <!-- rotated handwritten accent (desktop only — no room beside the card on mobile) -->
+    <div class="handnote handnote-float" aria-hidden="true">
+      מוכנה להפוך פניות ללקוחות משלמים?
     </div>
 
-    <!-- Social proof line -->
-    <p class="mt-8 text-sm text-white/50">
-      מעל 200 בעלי עסקים כבר נטרלו את ההתנגדויות בשיווק שלהם
-    </p>
+    <div class="panel panel--glow" style="padding: clamp(30px, 6vw, 52px);">
+      <div style="text-align:center; margin-bottom: 26px;">
+        <h2 style="font-size: clamp(1.6rem, 5vw, 2.2rem);">שריני את מקומך עכשיו</h2>
+        <p style="margin: 12px 0 0; color: var(--ink-dim);">
+          השאירי פרטים כדי לקבל גישה מיידית להדרכה.
+        </p>
+      </div>
 
-  </div>
+      <form id="lead-form" novalidate style="display:flex; flex-direction:column; gap:16px;">
+        <div>
+          <label class="field-label" for="name">שם פרטי</label>
+          <div style="position:relative;">
+            <input id="name" name="name" type="text" autocomplete="given-name"
+                   placeholder="איך לקרוא לך?" class="field" style="padding-inline-end:48px;">
+            <span class="material-symbols-outlined"
+                  style="position:absolute; inset-inline-end:16px; top:50%; transform:translateY(-50%);
+                         color: var(--pink);">person</span>
+          </div>
+          <p class="form-error" id="name-error"></p>
+        </div>
+
+        <div>
+          <label class="field-label" for="phone">מספר טלפון</label>
+          <div style="position:relative;">
+            <input id="phone" name="phone" type="tel" autocomplete="tel"
+                   placeholder="050-000-0000" class="field ltr" style="padding-inline-end:48px;">
+            <span class="material-symbols-outlined"
+                  style="position:absolute; inset-inline-end:16px; top:50%; transform:translateY(-50%);
+                         color: var(--pink);">call</span>
+          </div>
+          <p class="form-error" id="phone-error"></p>
+        </div>
+
+        <button type="submit" class="btn-primary" style="margin-top: 6px;">
+          <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
+          כן! אני רוצה לקבל את ההדרכה
+        </button>
+
+        <p style="text-align:center; font-size:0.82rem; color: var(--ink-faint);
+                  display:flex; align-items:center; justify-content:center; gap:6px;">
+          <span class="material-symbols-outlined" style="font-size:1.1em;">lock</span>
+          הפרטים שלך נשמרים אצלנו ולא יועברו לאף גורם.
+        </p>
+      </form>
+
+      <!-- Success -->
+      <div id="lead-success" class="hidden" style="text-align:center; padding: 16px 0; display:none;">
+        <span class="material-symbols-outlined ficon">check_circle</span>
+        <h3 style="margin: 14px 0 6px;">נשלח! מעבירה אותך להדרכה…</h3>
+        <p style="color: var(--ink-dim);">ההדרכה נפתחת עכשיו.</p>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 22px; color: var(--ink-faint); font-size:0.9rem;">
+      מעל 200 בעלות עסקים כבר נטרלו את ההתנגדויות בשיווק שלהן.
+    </p>
+  </section>
 
 </main>
+
+<footer style="text-align:center; padding: 28px 16px; color: var(--ink-faint); font-size:0.8rem; position:relative; z-index:1;">
+  כל הזכויות שמורות להדר סבג &copy; 2026
+</footer>
 
 <script src="script.js"></script>
 </body>

@@ -4,259 +4,209 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ההדרכה שלך | הדר סבג</title>
-  <meta name="description" content="ההדרכה החינמית שלך — 3 ההתנגדויות שהורסות לך מכירות ואיך לנטרל אותן בתוכן." />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="ההדרכה שלך — למה אנשים מתעניינים, שואלים, ובסוף לא קונים, ואיך לנטרל את זה בתוכן עוד לפני שיחת המכירה." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Assistant:wght@400;500;600;700;800&family=Gveret+Levin+AlefAlefAlef&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <style>
-    body { font-family: 'Assistant', sans-serif; background-color: #ede8ec; color: #1a1c1c; }
-    .neon-accent {
-      text-shadow: 0 0 18px rgba(178,0,82,0.25);
-    }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    .wrap { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: 20px; position: relative; z-index: 1; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: oklch(0.17 0.045 285 / 0.82);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hairline);
     }
-    .video-wrapper { position: relative; padding-top: 56.25%; background: #0d0d0f; border-radius: 16px; overflow: hidden; }
-    .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #666; }
-    .play-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(178,0,82,0.15); border: 2px solid rgba(178,0,82,0.3); display: flex; align-items: center; justify-content: center; font-size: 24px; }
-    .form-error { color: #b20052; font-size: 12px; margin-top: 4px; min-height: 16px; display: none; }
-    .form-error.visible { display: block; }
-    details summary { cursor: pointer; list-style: none; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .chevron { transform: rotate(180deg); }
-    .chevron { transition: transform 0.2s; display: inline-block; }
-    .ltr { direction: ltr; text-align: right; }
+    .nav-inner { max-width: var(--max-w); margin-inline:auto; padding: 0 20px; height: 60px;
+                 display:flex; align-items:center; justify-content:space-between; }
+    .grid-2 { display:grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
 
 <!-- Nav -->
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-[#e1bec4]/40">
-  <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
-    <span class="font-bold text-lg tracking-tight text-[#1a1c1c]">הדר סבג</span>
-    <a href="#discovery-form-section" class="text-sm font-bold text-[#b20052] hover:underline flex items-center gap-1">
-      לפגישת הפיצוח בחינם
-      <span class="material-symbols-outlined text-base">arrow_back</span>
+<nav class="nav">
+  <div class="nav-inner">
+    <span style="font-family:'Rubik',sans-serif; font-weight:800; font-size:1.1rem;">הדר סבג</span>
+    <a href="#breakthrough" style="display:inline-flex; align-items:center; gap:6px; color: var(--pink);
+       font-weight:700; font-size:0.9rem; text-decoration:none;">
+      לפגישת פיצוח
+      <span class="material-symbols-outlined" style="font-size:1.1em;">arrow_back</span>
     </a>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="pt-12 pb-8 px-4 text-center">
-  <div class="max-w-2xl mx-auto">
-    <span class="inline-block bg-[#b20052]/10 text-[#b20052] neon-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">ההדרכה שלך מחכה</span>
-    <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4" style="letter-spacing: -0.02em;">
-      הי<span id="greeting-name" class="text-[#b20052] neon-accent"></span>, הגעת למקום הנכון.<br>
-      צפי בהדרכה עכשיו <span class="material-symbols-outlined" style="font-size:1em;vertical-align:middle;">arrow_downward</span>
-    </h1>
-    <p class="text-lg text-[#6a5a5f] leading-relaxed">
-      בפחות מ-20 דקות תביני בדיוק מה גורם ללקוחות לאמר "אני צריכה לחשוב על זה"<br class="hidden md:block">
-      ואיך לנטרל את זה כבר בתוכן שלך.
-    </p>
-  </div>
-</section>
+<main class="wrap" style="padding-top: 44px; padding-bottom: 64px;">
 
-<!-- Video -->
-<section class="px-4 pb-12">
-  <div class="max-w-3xl mx-auto">
-    <div class="video-wrapper shadow-[0_16px_48px_rgba(178,0,82,0.12)]">
-      <!-- החליפי YOUR_VIDEO_ID במזהה הסרטון מיוטיוב -->
-      <!-- <iframe
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0"
+  <!-- Greeting -->
+  <header class="rise" style="text-align:center; max-width: 540px; margin-inline:auto;">
+    <span class="badge" style="margin-bottom: 22px;">
+      <span class="material-symbols-outlined">play_circle</span>
+      ההדרכה שלך מוכנה
+    </span>
+    <h1 style="font-size: clamp(1.7rem, 5.4vw, 2.6rem); color: var(--ink);">
+      היי<span id="greeting-name" class="neon"></span>, הגעת למקום הנכון.
+    </h1>
+  </header>
+
+  <p class="rise d1 measure" style="text-align:center; font-size: clamp(1.02rem, 3.4vw, 1.18rem);
+        color: var(--ink-dim); line-height:1.7; margin: 22px auto 0;">
+    צפי בהדרכה עכשיו. בפחות מ-20 דקות תגלי למה אנשים מתעניינים, שואלים שאלות, מבקשים פרטים —
+    ובסוף… לא קונים. וזה לא כי את לא טובה במה שאת עושה.
+  </p>
+
+  <!-- Video -->
+  <section class="rise d2" style="margin-top: 38px;">
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/4c5BlCtuzRg?rel=0"
         title="הדרכה | נטרול התנגדויות בשיווק"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe> -->
-      <div class="video-placeholder">
-        <div class="play-icon">▶</div>
-        <p class="text-sm">הסרטון יופיע כאן</p>
-      </div>
+        allowfullscreen></iframe>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- What you learned -->
-<section class="py-12 px-4 bg-white border-y border-[#e1bec4]/30">
-  <div class="max-w-2xl mx-auto text-center">
-    <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#b20052] mb-6">מה למדת בהדרכה</span>
-    <div class="grid md:grid-cols-3 gap-6 text-right">
-      <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">track_changes</span></div>
-        <h3 class="font-bold text-base mb-2">למה "אני צריכה לחשוב" זה לא באמת "לא"</h3>
-        <p class="text-sm text-[#6a5a5f] leading-relaxed">ההתנגדות הזו היא סימן שהלקוח עדיין לא קיבל תשובה לשאלה שלא שאל בקול.</p>
-      </div>
-      <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">key</span></div>
-        <h3 class="font-bold text-base mb-2">3 ההתנגדויות שחוזרות בכל עסק שירות</h3>
-        <p class="text-sm text-[#6a5a5f] leading-relaxed">התנגדות על התחום שלך, עלייך, ועל הלקוח עצמו. כל אחת נפרקת בתוכן אחר, ברגע שאת יודעת איך.</p>
-      </div>
-      <div class="bg-[#f9f9f9] rounded-2xl p-6">
-        <div class="text-2xl mb-3"><span class="material-symbols-outlined" style="font-size:1.5em;color:#b20052;">auto_awesome</span></div>
-        <h3 class="font-bold text-base mb-2">איך לבנות תוכן שמחמם לידים לפני השיחה</h3>
-        <p class="text-sm text-[#6a5a5f] leading-relaxed">כשהתוכן עושה את העבודה מראש, הלקוח מגיע לשיחה כבר מוכן ואת לא צריכה "למכור".</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- What was in the training -->
+  <section class="panel" style="margin-top: 52px; padding: clamp(28px, 5vw, 44px); max-width: 620px; margin-inline:auto;">
+    <h2 style="text-align:center; font-size: clamp(1.4rem, 4.4vw, 1.9rem); margin-bottom: 28px;">
+      אז מה היה בהדרכה:
+    </h2>
+    <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:20px;">
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.6;">למה אנשים אומרים "אני צריך לחשוב על זה" גם כשהם צריכים בדיוק את מה שאת מציעה</span>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.6;">איך לזהות את ההתנגדויות האמיתיות שמונעות מהם לקנות</span>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start;">
+        <span class="check-dot"><span class="material-symbols-outlined" style="font-size:17px;">check</span></span>
+        <span style="line-height:1.6;">איזה תוכן צריך להיות בעמוד כדי לנטרל את ההתנגדויות עוד לפני שיחת המכירה — ולעזור ללקוח להגיע בשל יותר להחלטה</span>
+      </li>
+    </ul>
+  </section>
 
-<!-- Transition divider -->
-<section class="py-14 px-4 text-center bg-[#f9f9f9]">
-  <div class="max-w-xl mx-auto">
-    <p class="text-2xl md:text-3xl font-bold text-[#1a1c1c] mb-3">אם מה שראית מהדהד אלייך</p>
-    <p class="text-lg text-[#6a5a5f]">ואת רוצה להתחיל ליישם את זה בעסק שלך עם ליווי צמוד,<br>הצעד הבא הוא פגישת פיצוח בחינם.</p>
-    <div class="w-12 h-1 bg-[#b20052] rounded-full mx-auto mt-8 opacity-40"></div>
-  </div>
-</section>
+  <!-- Transition / offer intro -->
+  <section style="margin-top: 60px; text-align:center; max-width: 600px; margin-inline:auto;">
+    <p style="font-size: clamp(1.1rem, 3.8vw, 1.35rem); line-height:1.7; color: var(--ink);">
+      אם את יודעת שיש לך ערך אמיתי לתת, אבל מרגישה שלא מספיק אנשים מבינים אותו —
+      <span class="neon" style="font-weight:700;">השלב הבא הוא פגישה אישית.</span>
+    </p>
+    <div style="width:90px; height:3px; border-radius:999px; margin: 24px auto 0;
+                background: linear-gradient(90deg, transparent, var(--pink), transparent);
+                box-shadow: 0 0 16px var(--glow);"></div>
+  </section>
 
-<!-- Offer Section -->
-<section class="py-12 px-4" id="discovery-form-section">
-  <div class="max-w-2xl mx-auto">
+  <!-- Breakthrough offer -->
+  <section id="breakthrough" style="margin-top: 44px;">
+    <div class="panel panel--glow" style="padding: clamp(30px, 6vw, 52px);">
 
-    <!-- Offer Card -->
-    <div class="glass-panel rounded-2xl p-8 md:p-10 border border-[#e1bec4]/40 shadow-[0_20px_48px_rgba(178,0,82,0.1)] mb-8">
-      <div class="text-center mb-8">
-        <span class="inline-block bg-[#b20052]/10 text-[#b20052] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">פגישת פיצוח | חינם לגמרי</span>
-        <h2 class="text-2xl md:text-3xl font-bold mb-3">את רוצה להתקדם?<br>בואי נבנה את האסטרטגיה יחד.</h2>
-        <p class="text-[#6a5a5f] text-base leading-relaxed">
-          פגישה של 30 דקות שבה אנחנו יושבות על העסק שלך ובונות אסטרטגיה שיווקית ממוקדת.
-          את יוצאת עם תוכנית ברורה, גם אם לא נמשיך לעבוד יחד.
+      <div style="text-align:center; margin-bottom: 26px;">
+        <span class="badge" style="margin-bottom:18px;">פגישת פיצוח · 1:1</span>
+        <h2 style="font-size: clamp(1.5rem, 4.8vw, 2.1rem);">בפגישה נבנה יחד את הצעדים הבאים שלך</h2>
+        <p class="measure" style="margin: 16px auto 0; color: var(--ink-dim); line-height:1.7;">
+          נבנה יחד את הצעדים שיעזרו לך ליישם את מה שלמדת בהדרכה בעסק שלך ספציפית,
+          כדי למשוך לקוחות איכותיים שבוחרים בך על פני אחרים. לרוב מדובר בשינויים קטנים ומדויקים
+          שיכולים ליצור תוצאות משמעותיות בזמן קצר.
         </p>
       </div>
 
-      <!-- Bullets -->
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
-          <span>אבחון של ההתנגדות הספציפית שעוצרת את הלקוחות <em>שלך</em></span>
-        </li>
-        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
-          <span>תראי בדיוק איך הליווי עובד ומה את מקבלת</span>
-        </li>
-        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
-          <span>אסטרטגיה שיווקית לעסק שלך שאת יוצאת איתה הביתה, גם אם לא נמשיך יחד</span>
-        </li>
-        <li class="flex items-start gap-3 text-sm text-[#1a1c1c]">
-          <span class="material-symbols-outlined text-[#b20052]" style="font-size:1.1em;">check</span>
-          <span>פגישת עבודה אמיתית, לא שיחת מכירה. ללא התחייבות.</span>
-        </li>
-      </ul>
+      <!-- eligibility note -->
+      <div style="display:flex; gap:12px; align-items:flex-start; background: oklch(0.27 0.05 290 / 0.5);
+                  border:1px solid var(--hairline); border-radius: var(--radius-sm);
+                  padding: 16px 18px; margin-bottom: 28px;">
+        <span class="material-symbols-outlined" style="color: var(--pink); flex:none;">lock_clock</span>
+        <p style="margin:0; font-size:0.95rem; line-height:1.6; color: var(--ink-dim);">
+          הפגישה היא 1:1 ולכן מספר המקומות מוגבל. מיועדת למאמנים, מטפלים ובעלי עסקי ליווי
+          שצפו בהדרכה במלואה.
+        </p>
+      </div>
 
       <!-- Form -->
-      <form id="discovery-form" novalidate class="space-y-4">
+      <form id="discovery-form" novalidate style="display:flex; flex-direction:column; gap:16px;">
 
         <div>
-          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-name">שם מלא</label>
-          <input
-            id="d-name" name="name" type="text" placeholder="השם שלך"
-            autocomplete="name"
-            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base"
-          >
-          <p class="form-error" id="d-name-error"></p>
+          <label class="field-label" for="d-business-domain">תחום העיסוק שלך</label>
+          <input id="d-business-domain" name="business_domain" type="text"
+                 placeholder="למשל: קואצ'ינג, טיפול רגשי, ייעוץ עסקי…" class="field">
         </div>
 
         <div>
-          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-email">אימייל</label>
-          <input
-            id="d-email" name="email" type="email" placeholder="your@email.com"
-            autocomplete="email"
-            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base ltr"
-          >
-          <p class="form-error" id="d-email-error"></p>
+          <label class="field-label" for="d-clients">כמה לקוחות היית רוצה להוסיף?</label>
+          <input id="d-clients" name="clients_to_add" type="text"
+                 placeholder="למשל: עוד 5 לקוחות בחודש" class="field">
         </div>
 
         <div>
-          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-phone">טלפון</label>
-          <input
-            id="d-phone" name="phone" type="tel" placeholder="050-000-0000"
-            autocomplete="tel"
-            class="w-full h-13 px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base ltr"
-          >
+          <label class="field-label" for="d-pricing">מה המחיר של הליווי כיום, וכמה היית רוצה לגבות בעוד כמה חודשים?</label>
+          <textarea id="d-pricing" name="pricing" rows="2"
+                    placeholder="היום: ___ · בעוד כמה חודשים: ___" class="field"></textarea>
+        </div>
+
+        <div>
+          <label class="field-label" for="d-challenge">מה האתגר המרכזי?</label>
+          <select id="d-challenge" name="main_challenge" class="field">
+            <option value="" disabled selected>בחרי את האתגר המרכזי שלך</option>
+            <option value="להביא לקוחות">להביא לקוחות</option>
+            <option value="למכור">למכור</option>
+            <option value="יציבות">יציבות</option>
+          </select>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label class="field-label" for="d-name">שם מלא</label>
+            <input id="d-name" name="name" type="text" autocomplete="name"
+                   placeholder="השם שלך" class="field">
+            <p class="form-error" id="d-name-error"></p>
+          </div>
+          <div>
+            <label class="field-label" for="d-email">מייל</label>
+            <input id="d-email" name="email" type="email" autocomplete="email"
+                   placeholder="your@email.com" class="field ltr">
+            <p class="form-error" id="d-email-error"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="field-label" for="d-phone">מספר וואטסאפ</label>
+          <input id="d-phone" name="phone" type="tel" autocomplete="tel"
+                 placeholder="050-000-0000" class="field ltr">
           <p class="form-error" id="d-phone-error"></p>
         </div>
 
-        <div>
-          <label class="block text-sm font-semibold text-[#6a5a5f] mb-1" for="d-business-domain">תחום העסק שלך</label>
-          <input
-            type="text"
-            id="d-business-domain" name="business_domain"
-            placeholder="למשל: קואצ'ינג, טיפול, ייעוץ..."
-            class="w-full px-4 py-3.5 rounded-xl border border-[#e1bec4] bg-white/70 focus:border-[#b20052] focus:ring-1 focus:ring-[#b20052] outline-none transition-all text-base"
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="w-full py-4 rounded-full bg-[#b20052] text-white text-lg font-bold shadow-lg shadow-[#b20052]/20 hover:bg-[#d42a6a] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
-        >
-          לקביעת פגישת הפיצוח בחינם
-          <span class="material-symbols-outlined">arrow_back</span>
+        <button type="submit" class="btn-primary" style="margin-top:6px;">
+          <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
+          אני רוצה לקבוע פגישת פיצוח
         </button>
 
-        <p class="text-xs text-center text-[#6a5a5f]/60 italic">הפרטים שמורים אצלי בלבד. אחזור אלייך תוך 24 שעות.</p>
-
+        <p style="text-align:center; font-size:0.82rem; color: var(--ink-faint);
+                  display:flex; align-items:center; justify-content:center; gap:6px;">
+          <span class="material-symbols-outlined" style="font-size:1.1em;">lock</span>
+          הפרטים שמורים אצלנו בלבד. נחזור אלייך תוך 24 שעות.
+        </p>
       </form>
 
       <!-- Success -->
-      <div id="discovery-success" class="hidden text-center py-8">
-        <div class="text-5xl mb-4"><span class="material-symbols-outlined" style="font-size:1em;color:#b20052;">mark_email_read</span></div>
-        <h3 class="text-xl font-bold text-[#1a1c1c] mb-2">קיבלתי! נחזור אלייך תוך 24 שעות.</h3>
-        <p class="text-[#6a5a5f]">נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים.</p>
+      <div id="discovery-success" class="hidden" style="text-align:center; padding: 16px 0; display:none;">
+        <span class="material-symbols-outlined ficon">mark_email_read</span>
+        <h3 style="margin: 14px 0 6px;">קיבלתי! נחזור אלייך תוך 24 שעות.</h3>
+        <p style="color: var(--ink-dim);">נתאם יחד זמן מתאים לפגישת הפיצוח שלך.</p>
       </div>
 
     </div>
+  </section>
 
-    <!-- FAQ -->
-    <div class="space-y-3">
-      <p class="text-xs font-bold tracking-widest uppercase text-[#b20052] text-center mb-4">שאלות נפוצות</p>
+</main>
 
-      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden group">
-        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
-          <span>מה קורה בפגישה? יש כאן מכירה?</span>
-          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
-        </summary>
-        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">זו פגישת עבודה, לא שיחת מכירה. אנחנו בונות ביחד אסטרטגיה שיווקית לעסק שלך: מזהות את ההתנגדויות שעוצרות את הלקוחות שלך ובונות תוכנית לנטרל אותן. את יוצאת עם תוכנית ברורה, גם אם לא נמשיך יחד.</p>
-      </details>
-
-      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden">
-        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
-          <span>כמה זמן הפגישה?</span>
-          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
-        </summary>
-        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">30 דקות. מספיק כדי לבנות אסטרטגיה ממוקדת ולהציג את התהליך אם יש התאמה.</p>
-      </details>
-
-      <details class="bg-white border border-[#e1bec4]/40 rounded-xl overflow-hidden">
-        <summary class="flex justify-between items-center px-5 py-4 font-semibold text-sm select-none">
-          <span>מתי תחזרי אליי?</span>
-          <span class="material-symbols-outlined text-[#b20052] chevron">expand_more</span>
-        </summary>
-        <p class="px-5 pb-4 text-sm text-[#6a5a5f] leading-relaxed">תוך 24 שעות. נחזור אלייך לוואטסאפ או למייל לתיאום זמן מתאים.</p>
-      </details>
-    </div>
-
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="py-8 text-center text-xs text-[#6a5a5f]/50 border-t border-[#e1bec4]/30 mt-8">
-  כל הזכויות שמורות להדר סבג &copy; 2025
+<footer style="text-align:center; padding: 28px 16px; color: var(--ink-faint); font-size:0.8rem; position:relative; z-index:1;">
+  כל הזכויות שמורות להדר סבג &copy; 2026
 </footer>
 
-<script>
-  // Read name from URL
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get('name');
-  if (name) {
-    const el = document.getElementById('greeting-name');
-    if (el) el.textContent = ' ' + decodeURIComponent(name);
-  }
-</script>
 <script src="script.js"></script>
 </body>
 </html>
